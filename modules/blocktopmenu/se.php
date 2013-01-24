@@ -1,0 +1,37 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_e5b7525b4214a759876af4448bd6b87d'] = 'Horizontell toppmeny';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_925a8a825a28f69e7a96f5996f9cfcc5'] = 'Lägger till en toppmeny';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_597582c140dd691b522fe42299a24d34'] = 'Inställningarna uppdaterade';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_b9129c167a73844d16d28b0949719155'] = 'Uppdateringarna misslyckades';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_5eef1a8aef991f41dc621dd69e97ad80'] = 'Länken gick inte att lägga till';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_11ad009c1b7c0615be18fe91185c179a'] = 'Länken har lagts till';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_15772d25000bce9fc3a2a2fd7d41a717'] = 'Länken har raderats';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_f4f70727dc34561dfde1a3c529b6205c'] = 'Inställningar';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_9dea4016dbcc290b773ab2fae678aaa8'] = 'Artikel';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_1063e38cb53d94d386f21227fcd84717'] = 'Ta bort';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_c7da501f54544eba6787960200d9efdb'] = 'CMS';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_ec136b444eede3bc85639fac0dd06229'] = 'Återförsäljare';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_c0bd7654d5b278e65f21cf4e9153fdb4'] = 'Tillverkare';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_af1b98adf7f686b84cd0b443e022b7a0'] = 'Kategorier';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_068f80c7519d0528fb08e82137a72131'] = 'Produkter';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_ac3b3f2d1984171e48eaa3d0bc56d75f'] = 'Välj produkt ID';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_56e8bf6c54f1638e7bce5a2fcd5b20fe'] = 'Meny topplänkar';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_ec211f7c20af43e742bf2570c3cb84f9'] = 'Lägg till';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_fcd7ab4061bb3846392cc34376902165'] = 'Bestäm produkt ID';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_97f08a40f22a625d0cbfe03db3349108'] = 'Produkt ID';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_8cc149b77eaece54cee2e7e02f40018a'] = 'Sökfält';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_c436854b135c3dd00ab95b2d4344b0ed'] = 'Spara';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_9f1b01ac44ff287d5b8ed20ec8ee180b'] = 'Lägg toppmenylänk';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_b021df6aac4654c454f46c77646e745f'] = 'Etikett';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_97e7c9a7d06eac006a28bf05467fcc8b'] = 'Länk';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_7a115fe2bd8b94ead1550a2da953cf87'] = 'Nytt fönster';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_19488f2956dc859eb635dbb0deaa15e1'] = 'Lägg till';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_814579fdad9baf2cdcac456468265384'] = 'Topmenylänkar';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_4443702c8a13a65ac66d074b7a82af9a'] = 'Länk ID';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_004bf6c9a40003140292e97330236c53'] = 'Åtgärd';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_93cba07454f06a4a960172bbd6e2a435'] = 'Ja';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_bafd7322c6e97d25b6299b5d6fe8920b'] = 'Nej';
+$_MODULE['<{blocktopmenu}prestashop>blocktopmenu_13348442cc6a27032d2b4aa28b75a5d3'] = 'Sök';

@@ -1,0 +1,30 @@
+/* block top search */
+#header_right #search_block_top {
+    background: url("../../../img/trans-bg.png") repeat-x scroll right top #39414C;
+    float: right;
+    height: 40px;
+	-webkit-border-bottom-right-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+    margin-bottom: 11px;
+    width: 548px;
+}
+#header_right #search_block_top p { padding: 1.4em 0 0.4em 1em }
+#header_right #search_block_top label, #header_right #search_block_top input { float: left }
+#header_right #search_block_top label {
+    background: url("../../../img/icon/search-icon.png") no-repeat scroll 0 -1px transparent;
+    display: block;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+#header_right #search_block_top input.search_query { width: 12em }
+
+
+/* block left column "Quick search" */
+#search_block_left input { margin: 2px 0 0 0 }
+#search_block_left .search_query { width: 11em }
+#search_button { display: inline }

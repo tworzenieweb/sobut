@@ -1,0 +1,9 @@
+/* Block advertising */
+.advertising_block {
+    background: url("../../../img/shadow.png") repeat-x scroll left bottom transparent;
+    margin-bottom: 1em;
+    margin-left: 13px;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 740px;
+}

@@ -1,0 +1,13 @@
+This module was proudly brought to you by the iLet Team
+---------------------------------------------------------------------------------
+
+Some features you will find in this module:
+
+-Light, clean and blazing fast
+-Faster and with Better SEO than others Carroussel by not making use of Flash
+-You can choose the ammount of items of the Carroussel (max number is 5)
+-Customizable Width and Height to perfect suit your theme
+-Easily customizable layout (CSS)
+
+---------------------------------------------------------------------------------
+	You can find more info about us at http://www.ilet.com.br

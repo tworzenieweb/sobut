@@ -1,0 +1,21 @@
+/* block myaccount */
+#left_column div.myaccount, #right_column div.myaccount {
+    background: none repeat scroll 0 0 transparent;
+}
+div.myaccount h4 {
+    background: url("../../../img/trans-bg.png") repeat-x scroll left top #971D58;
+}
+div.myaccount h4 a, div.myaccount h4 { color: white }
+div.myaccount, div.myaccount a { color: #5d0630 }
+div.myaccount ul.bullet li { background-image: url('../../../img/bullet_myaccount.gif') }
+div.myaccount ul.bullet .icon { display: none }
+div.myaccount p.logout { padding: 0.3em 0 0.3em 2em }
+div.myaccount p.logout, div.myaccount p.logout a { color: #dd2a81 }
+div.myaccount p.logout a { text-decoration: underline }
+div.myaccount p.logout a:hover { text-decoration: none }
+div.myaccount .block_content {
+    background: none repeat scroll 0 0 #FEFEFE;
+    border-left: 1px solid #DFDFDF;
+    border-right: 1px solid #DFDFDF;
+}
+.account_input { margin-left: 0; width: 15em }

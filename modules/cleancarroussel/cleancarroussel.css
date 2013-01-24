@@ -1,0 +1,36 @@
+#cleancaroussel_wrap {
+    background: url("img/trans-bg.png") repeat scroll 0 0 #39414C;
+    float: left;
+    margin: 2px auto 32px;
+    overflow: hidden;
+    padding-bottom: 13px;
+    position: relative;
+}
+#cleancaroussel_wrap ul.sliderMenu {
+	height:15px;
+    width: 200px;
+	margin:5px auto 0
+}
+
+#cleancaroussel_wrap ul.sliderContent {overflow:hidden}
+
+#cleancaroussel_wrap ul.sliderMenu li, #cleancaroussel_wrap ul.sliderMenu li a {
+    height: 15px;
+	float:left;
+	line-height:15px;
+	text-align:center;
+    list-style: none outside none;
+    width: 40px;
+}
+	#cleancaroussel_wrap ul.sliderMenu li a{background:transparent url('img/carrosselControls.png') no-repeat top left}
+		#cleancaroussel_wrap ul.sliderMenu li a.current{background-position:0 -30px !important}
+		#cleancaroussel_wrap ul.sliderMenu li a:hover{background-position:0 -15px}
+	
+#cleancaroussel_wrap ul.sliderContent li.ativo {display: block}
+
+#cleancaroussel_wrap img {
+    background: url("img/trans-bg.png") repeat scroll 0 0 #39414C;
+    height: 260px;
+    padding: 5px;
+    width: 969px;
+}
