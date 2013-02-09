@@ -91,6 +91,8 @@ class HomeNewProducts extends Module
 		global $smarty;
 
 		$newProducts = Product::getNewProducts(intval($params['cookie']->id_lang), 0, intval(Configuration::get('NEW_PRODUCTS_NBR')));
+                
+                
 		$smarty->assign(array('new_products' => $newProducts, 'homeSize' => Image::getSize('home')));
 
 		return $this->display(__FILE__, 'homenewproducts.tpl');

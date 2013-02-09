@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-01-24 00:21:26
-         compiled from "/home/tworzenieweb/www/goldenbody/modules/homefeatured/homefeatured.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:14093330775100707625c260-01307763%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:07:51
+         compiled from "/home/tworzenieweb/www/goldenbody/themes/presta103/modules/homefeatured/homefeatured.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:17742087051155b1774e375-99601199%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '18f1ef018d36de7728411f6de36147fa4d8ebd8e' => 
+    '6412a7359a7c2528b7f96f3dd815b0969b21a93c' => 
     array (
-      0 => '/home/tworzenieweb/www/goldenbody/modules/homefeatured/homefeatured.tpl',
-      1 => 1345823312,
+      0 => '/home/tworzenieweb/www/goldenbody/themes/presta103/modules/homefeatured/homefeatured.tpl',
+      1 => 1360353990,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14093330775100707625c260-01307763',
+  'nocache_hash' => '17742087051155b1774e375-99601199',
   'function' => 
   array (
   ),
@@ -22,7 +22,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nbItemsPerLine' => 0,
     'nbLines' => 0,
     'liHeight' => 0,
-    'ulHeight' => 0,
     'product' => 0,
     'link' => 0,
     'homeSize' => 0,
@@ -34,9 +33,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5100707638a9f3_25250532',
+  'unifunc' => 'content_51155b17874ff5_28407969',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5100707638a9f3_25250532')) {function content_5100707638a9f3_25250532($_smarty_tpl) {?><?php if (!is_callable('smarty_function_math')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/function.math.php';
+<?php if ($_valid && !is_callable('content_51155b17874ff5_28407969')) {function content_51155b17874ff5_28407969($_smarty_tpl) {?><?php if (!is_callable('smarty_function_math')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/function.math.php';
 if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 ?>
 
@@ -53,8 +52,7 @@ if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/gold
 
 			<?php echo smarty_function_math(array('equation'=>"nbLines*liHeight",'nbLines'=>ceil($_smarty_tpl->tpl_vars['nbLines']->value),'liHeight'=>$_smarty_tpl->tpl_vars['liHeight']->value,'assign'=>'ulHeight'),$_smarty_tpl);?>
 
-			<ul style="height:<?php echo $_smarty_tpl->tpl_vars['ulHeight']->value;?>
-px;">
+			<ul>
 			<?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['product']->total= $_smarty_tpl->_count($_from);
@@ -73,25 +71,35 @@ $_smarty_tpl->tpl_vars['product']->_loop = true;
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['homeFeaturedProducts']['last'] = $_smarty_tpl->tpl_vars['product']->last;
 ?>
 				<li class="ajax_block_product <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['first']){?>first_item<?php }elseif($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['last']){?>last_item<?php }else{ ?>item<?php }?> <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['iteration']%$_smarty_tpl->tpl_vars['nbItemsPerLine']->value==0){?>last_item_of_line<?php }elseif($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['iteration']%$_smarty_tpl->tpl_vars['nbItemsPerLine']->value==1){?>clear<?php }?> <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['iteration']>($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['total']-($_smarty_tpl->getVariable('smarty')->value['foreach']['homeFeaturedProducts']['total']%$_smarty_tpl->tpl_vars['nbItemsPerLine']->value))){?>last_line<?php }?>">
-					<h5><a href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
-" title="<?php echo smarty_modifier_escape(smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['name'],32,'...'), 'htmlall', 'UTF-8');?>
-"><?php echo smarty_modifier_escape(smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['name'],27,'...'), 'htmlall', 'UTF-8');?>
-</a></h5>
-					<div class="product_desc"><a href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
-" title="<?php echo smartyTranslate(array('s'=>'More','mod'=>'homefeatured'),$_smarty_tpl);?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['product']->value['description_short']),115,'...');?>
-</a></div>
-					<a href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
 " title="<?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['product']->value['name'], 'html', 'UTF-8');?>
 " class="product_image"><img src="<?php echo $_smarty_tpl->tpl_vars['link']->value->getImageLink($_smarty_tpl->tpl_vars['product']->value['link_rewrite'],$_smarty_tpl->tpl_vars['product']->value['id_image'],'home');?>
 " height="<?php echo $_smarty_tpl->tpl_vars['homeSize']->value['height'];?>
 " width="<?php echo $_smarty_tpl->tpl_vars['homeSize']->value['width'];?>
 " alt="<?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['product']->value['name'], 'html', 'UTF-8');?>
 " /></a>
-					<div>
-						<?php if ($_smarty_tpl->tpl_vars['product']->value['show_price']&&!isset($_smarty_tpl->tpl_vars['restricted_country_mode']->value)&&!$_smarty_tpl->tpl_vars['PS_CATALOG_MODE']->value){?><p class="price_container"><span class="price"><?php if (!$_smarty_tpl->tpl_vars['priceDisplay']->value){?><?php echo Product::convertPrice(array('price'=>$_smarty_tpl->tpl_vars['product']->value['price']),$_smarty_tpl);?>
+					<h5><a href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
+" title="<?php echo smarty_modifier_escape(smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['name'],32,'...'), 'htmlall', 'UTF-8');?>
+"><?php echo smarty_modifier_escape(smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['name'],50,'...'), 'htmlall', 'UTF-8');?>
+</a></h5>
+					<div class="product_desc">
+                                            <a href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
+" title="<?php echo smartyTranslate(array('s'=>'More','mod'=>'homefeatured'),$_smarty_tpl);?>
+"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['product']->value['description_short']),115,'...');?>
+</a></div>
+                                            
+					
+                                        
+                                        
+						<?php if ($_smarty_tpl->tpl_vars['product']->value['show_price']&&!isset($_smarty_tpl->tpl_vars['restricted_country_mode']->value)&&!$_smarty_tpl->tpl_vars['PS_CATALOG_MODE']->value){?>
+                                                    <p class="price_container">
+                                                    <span class="price"><?php if (!$_smarty_tpl->tpl_vars['priceDisplay']->value){?><?php echo Product::convertPrice(array('price'=>$_smarty_tpl->tpl_vars['product']->value['price']),$_smarty_tpl);?>
 <?php }else{ ?><?php echo Product::convertPrice(array('price'=>$_smarty_tpl->tpl_vars['product']->value['price_tax_exc']),$_smarty_tpl);?>
-<?php }?></span></p><?php }else{ ?><div style="height:21px;"></div><?php }?>
+<?php }?></span>
+                                                    </p>
+                                               <?php }else{ ?><div style="height:21px;"></div><?php }?>
+                                                    
+                                                <div class="featured-products-buttons">
 						<a class="button" href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
 " title="<?php echo smartyTranslate(array('s'=>'View','mod'=>'homefeatured'),$_smarty_tpl);?>
 "><?php echo smartyTranslate(array('s'=>'View','mod'=>'homefeatured'),$_smarty_tpl);?>
@@ -112,14 +120,17 @@ $_smarty_tpl->tpl_vars['product']->_loop = true;
 						<?php }else{ ?>
 							<div style="height:23px;"></div>
 						<?php }?>
-					</div>
+                                                </div>
 				</li>
 			<?php } ?>
 			</ul>
+                        <div class="clear"></div>
 		</div>
 	<?php }else{ ?>
-		<p><?php echo smartyTranslate(array('s'=>'No featured products','mod'=>'homefeatured'),$_smarty_tpl);?>
-</p>
+            <div class="block_content">
+		<?php echo smartyTranslate(array('s'=>'No featured products','mod'=>'homefeatured'),$_smarty_tpl);?>
+
+                </div>
 	<?php }?>
 </div>
 <!-- /MODULE Home Featured Products -->

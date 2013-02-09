@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-01-24 00:21:10
-         compiled from "/home/tworzenieweb/www/goldenbody/modules/blockcart/blockcart.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:181992460351007066abcfd3-93096394%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:07:51
+         compiled from "/home/tworzenieweb/www/goldenbody/themes/presta103/modules/blockcart/blockcart.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:136427106351155b1704f208-38256626%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'e9f0d432cdc3deb04dc37570d5bce9e9d3658f44' => 
+    'e0fe3fa9c0956e011043904c3fa13b6310086b2b' => 
     array (
-      0 => '/home/tworzenieweb/www/goldenbody/modules/blockcart/blockcart.tpl',
-      1 => 1345823312,
+      0 => '/home/tworzenieweb/www/goldenbody/themes/presta103/modules/blockcart/blockcart.tpl',
+      1 => 1359756098,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '181992460351007066abcfd3-93096394',
+  'nocache_hash' => '136427106351155b1704f208-38256626',
   'function' => 
   array (
   ),
@@ -47,9 +47,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_51007066d863f2_61622094',
+  'unifunc' => 'content_51155b17319484_13064607',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51007066d863f2_61622094')) {function content_51007066d863f2_61622094($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_51155b17319484_13064607')) {function content_51155b17319484_13064607($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 if (!is_callable('smarty_modifier_replace')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.replace.php';
 ?>
 
@@ -262,11 +262,11 @@ icon/delete.gif" alt="<?php echo smartyTranslate(array('s'=>'Delete'),$_smarty_t
 		<?php }?>
 		<p id="cart-buttons">
 			<?php if ($_smarty_tpl->tpl_vars['order_process']->value=='order'){?><a href="<?php echo $_smarty_tpl->tpl_vars['link']->value->getPageLink(((string)$_smarty_tpl->tpl_vars['order_process']->value).".php",true);?>
-" class="button_small" title="<?php echo smartyTranslate(array('s'=>'Cart','mod'=>'blockcart'),$_smarty_tpl);?>
+" class="btn" title="<?php echo smartyTranslate(array('s'=>'Cart','mod'=>'blockcart'),$_smarty_tpl);?>
 "><?php echo smartyTranslate(array('s'=>'Cart','mod'=>'blockcart'),$_smarty_tpl);?>
 </a><?php }?>
 			<a href="<?php echo $_smarty_tpl->tpl_vars['link']->value->getPageLink(((string)$_smarty_tpl->tpl_vars['order_process']->value).".php",true);?>
-<?php if ($_smarty_tpl->tpl_vars['order_process']->value=='order'){?>?step=1<?php }?>" id="button_order_cart" class="exclusive<?php if ($_smarty_tpl->tpl_vars['order_process']->value=='order-opc'){?>_large<?php }?>" title="<?php echo smartyTranslate(array('s'=>'Check out','mod'=>'blockcart'),$_smarty_tpl);?>
+<?php if ($_smarty_tpl->tpl_vars['order_process']->value=='order'){?>?step=1<?php }?>" id="button_order_cart" class="btn<?php if ($_smarty_tpl->tpl_vars['order_process']->value=='order-opc'){?>_large<?php }?>" title="<?php echo smartyTranslate(array('s'=>'Check out','mod'=>'blockcart'),$_smarty_tpl);?>
 "><?php echo smartyTranslate(array('s'=>'Check out','mod'=>'blockcart'),$_smarty_tpl);?>
 </a>
 		</p>

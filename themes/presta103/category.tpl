@@ -80,10 +80,11 @@
 		{/if}
 
 		{if $products}
-				{include file="$tpl_dir./product-compare.tpl"}
+				{* include file="$tpl_dir./product-compare.tpl" *}
+                                <div class="product-content">
 				{include file="$tpl_dir./product-sort.tpl"}
 				{include file="$tpl_dir./product-list.tpl" products=$products}
-				{include file="$tpl_dir./product-compare.tpl"}
+				{* include file="$tpl_dir./product-compare.tpl" *}
 				{include file="$tpl_dir./pagination.tpl"}
 			{elseif !isset($subcategories)}
 				<p class="warning">{l s='There are no products in this category.'}</p>
@@ -91,4 +92,5 @@
 	{elseif $category->id}
 		<p class="warning">{l s='This category is currently unavailable.'}</p>
 	{/if}
+        </div>
 {/if}

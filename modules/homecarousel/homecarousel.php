@@ -334,7 +334,7 @@ class HomeCarousel extends Module
 		$smarty->assign(array(
 			'allow_buy_when_out_of_stock' => Configuration::get('PS_ORDER_OUT_OF_STOCK', false),
 			'max_quantity_to_allow_display' => Configuration::get('PS_LAST_QTIES'),
-			'category' => $category,
+//			'category' => $category,
 			'products' => $products,
 			'currency' => new Currency((int)($params['cart']->id_currency)),
 			'lang' => Language::getIsoById((int)($params['cookie']->id_lang)),

@@ -1,6 +1,6 @@
 <?php
 /*
-* 2007-2012 PrestaShop
+* 2007-2011 PrestaShop 
 *
 * NOTICE OF LICENSE
 *
@@ -19,8 +19,8 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2012 PrestaShop SA
-*  @version  Release: $Revision: 16873 $
+*  @copyright  2007-2011 PrestaShop SA
+*  @version  Release: $Revision: 10894 $
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
@@ -45,7 +45,7 @@ class ValidateCore
 	*/
 	public static function isEmail($email)
 	{
-		return !empty($email) && preg_match('/^[a-z\p{L}0-9!#$%&\'*+\/=?^`{}|~_-]+[.a-z\p{L}0-9!#$%&\'*+\/=?^`{}|~_-]*@[a-z\p{L}0-9]+[._a-z\p{L}0-9-]*\.[a-z0-9]+$/ui', $email);
+		return !empty($email) AND preg_match('/^[a-z0-9!#$%&\'*+\/=?^`{}|~_-]+[.a-z0-9!#$%&\'*+\/=?^`{}|~_-]*@[a-z0-9]+[._a-z0-9-]*\.[a-z0-9]+$/ui', $email);
 	}
 
 	/**
@@ -152,7 +152,7 @@ class ValidateCore
 	public static function isOptId($id)
 	{
 		Tools::displayAsDeprecated();
-		return empty($id) || self::isUnsignedId($id);
+		return empty($id) OR self::isUnsignedId($id);
 	}
 
 	/**
@@ -278,17 +278,6 @@ class ValidateCore
 	public static function isPrice($price)
 	{
 		return preg_match('/^[0-9]{1,10}(\.[0-9]{1,9})?$/', $price);
-	}
-
-	/**
-	 * Check for price validity (including negative price)
-	 *
-	 * @param string $price Price to validate
-	 * @return boolean Validity is ok or not
-	 */
-	public static function isNegativePrice($price)
-	{
-		return preg_match('/^[-]?[0-9]{1,10}(\.[0-9]{1,9})?$/', $price);
 	}
 
 	/**
@@ -463,15 +452,8 @@ class ValidateCore
 	*/
 	public static function isCleanHtml($html)
 	{
-		$events = 'onmousedown|onmousemove|onmmouseup|onmouseover|onmouseout|onload|onunload|onfocus|onblur|onchange';
-		$events .= '|onsubmit|ondblclick|onclick|onkeydown|onkeyup|onkeypress|onmouseenter|onmouseleave|onerror|onselect|onreset|onabort|ondragdrop|onresize|onactivate|onafterprint|onmoveend';
-		$events .= '|onafterupdate|onbeforeactivate|onbeforecopy|onbeforecut|onbeforedeactivate|onbeforeeditfocus|onbeforepaste|onbeforeprint|onbeforeunload|onbeforeupdate|onmove';
-		$events .= '|onbounce|oncellchange|oncontextmenu|oncontrolselect|oncopy|oncut|ondataavailable|ondatasetchanged|ondatasetcomplete|ondeactivate|ondrag|ondragend|ondragenter|onmousewheel';
-		$events .= '|ondragleave|ondragover|ondragstart|ondrop|onerrorupdate|onfilterchange|onfinish|onfocusin|onfocusout|onhashchange|onhelp|oninput|onlosecapture|onmessage|onmouseup|onmovestart';
-		$events .= '|onoffline|ononline|onpaste|onpropertychange|onreadystatechange|onresizeend|onresizestart|onrowenter|onrowexit|onrowsdelete|onrowsinserted|onscroll|onsearch|onselectionchange';
-		$events .= '|onselectstart|onstart|onstop';
-		
-		return (!preg_match('/<[ \t\n]*script/ims', $html) && !preg_match('/<?.*('.$events.')[ \t\n]*=/ims', $html) && !preg_match('/.*script\:/ims', $html) && !preg_match('/<[ \t\n]*i?frame/ims', $html));
+		$jsEvent = 'onmousedown|onmousemove|onmmouseup|onmouseover|onmouseout|onload|onunload|onfocus|onblur|onchange|onsubmit|ondblclick|onclick|onkeydown|onkeyup|onkeypress|onmouseenter|onmouseleave|onerror';
+		return (!preg_match('/<[ \t\n]*script/i', $html) && !preg_match('/<?.*('.$jsEvent.')[ \t\n]*=/i', $html)  && !preg_match('/.*script\:/i', $html));
 	}
 
 	/**
@@ -574,7 +556,7 @@ class ValidateCore
 	*/
 	public static function isBool($bool)
 	{
-		return $bool === 1 || $bool === 0 || $bool === true || $bool === false || $bool === '1' || $bool === '0' || $bool === null;
+		return is_null($bool) OR is_bool($bool) OR preg_match('/^0|1$/', $bool);
 	}
 
 	/**
@@ -643,7 +625,7 @@ class ValidateCore
 	*/
 	public static function isOrderWay($orderWay)
 	{
-		return ($orderWay === 'ASC' | $orderWay === 'DESC' | $orderWay === 'asc' | $orderWay === 'desc');
+		return ($orderWay === 'ASC' | $orderWay === 'DESC' | $orderWay === 'asc' | $orderWay === 'desc' | is_numeric($orderWay));
 	}
 
 	/**
@@ -742,7 +724,7 @@ class ValidateCore
 	*/
 	public static function isLoadedObject($object)
 	{
-		return isset($object->id) && $object->id;
+		return is_object($object) AND $object->id;
 	}
 
 	/**
@@ -826,7 +808,7 @@ class ValidateCore
 	*/
 	public static function isTabName($name)
 	{
-		return preg_match('/^[^!<>,;?=+@#"°{}]*$/u', $name);
+		return preg_match('/^[a-zA-Z0-9_-]*$/', $name);
 	}
 
 	public static function isWeightUnit($unit)

@@ -40,14 +40,19 @@ class NewProductsControllerCore extends FrontController
 		parent::process();
 		
 		$this->productSort();
+                
+                
 		$nbProducts = (int)(Product::getNewProducts((int)(self::$cookie->id_lang), isset($this->p) ? (int)($this->p) - 1 : NULL, isset($this->n) ? (int)($this->n) : NULL, true));
 		$this->pagination($nbProducts);
+                
+                $products = Product::getNewProducts((int)(self::$cookie->id_lang), (int)($this->p) - 1, (int)($this->n), false, $this->orderBy, $this->orderWay);
 		
 		self::$smarty->assign(array(
-			'products' => Product::getNewProducts((int)(self::$cookie->id_lang), (int)($this->p) - 1, (int)($this->n), false, $this->orderBy, $this->orderWay),
+			'products' => $products,
 			'add_prod_display' => Configuration::get('PS_ATTRIBUTE_CATEGORY_DISPLAY'),
 			'nbProducts' => (int)($nbProducts),
-			'homeSize' => Image::getSize('home')	
+			'homeSize' => Image::getSize('home'),
+                        'manufacturers' => Product::getNewProducts((int)(self::$cookie->id_lang), (int)($this->p) - 1, (int)($this->n), false, $this->orderBy, $this->orderWay,true)
 		));
 	}
 	

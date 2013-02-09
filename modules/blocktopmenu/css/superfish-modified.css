@@ -4,6 +4,9 @@
     clear: both;
     margin: auto;
     width: 979px;
+    position: absolute;
+    bottom: 0;
+    
 }
 .sf-right {
   margin-right: 14px;
@@ -17,7 +20,7 @@
 }
 
 .sf-menu {
-    background: url("../img/trans-bg.png") repeat-x scroll 0 0 #39414C;
+    background: url("../img/trans-bg.png") repeat-x scroll 0 0 #878EA8;
     float: left;
 	-webkit-border-bottom-right-radius: 5px;
 -webkit-border-bottom-left-radius: 5px;
@@ -27,7 +30,7 @@ border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px;
     height: 36px;
     line-height: 1.2;
-    margin-top: 96px;
+    margin-top: 262px;
     padding: 12px 0 10px 10px;
     width: 969px;
 }

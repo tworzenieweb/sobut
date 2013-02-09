@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-01-24 00:21:26
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:07:51
          compiled from "/home/tworzenieweb/www/goldenbody/modules/homecarousel/homecarousel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11691220295100707616b661-07993037%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:106747060251155b17a187c1-71013003%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11691220295100707616b661-07993037',
+  'nocache_hash' => '106747060251155b17a187c1-71013003',
   'function' => 
   array (
   ),
@@ -32,9 +32,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5100707623f613_70493666',
+  'unifunc' => 'content_51155b17aa6e18_14273474',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5100707623f613_70493666')) {function content_5100707623f613_70493666($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_51155b17aa6e18_14273474')) {function content_51155b17aa6e18_14273474($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 ?><!--
   jCarousel library
 -->

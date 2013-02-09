@@ -25,6 +25,7 @@
 *}
 
 {if $comparator_max_item}
+    <div class="products-compare-form">
 <script type="text/javascript">
 // <![CDATA[
 	var min_item = '{l s='Please select at least one product.' js=1}';
@@ -33,9 +34,10 @@
 </script>
 	<form method="get" action="{$link->getPageLink('products-comparison.php')}" onsubmit="true">
 		<p>
-		<input type="submit" class="button" value="{l s='Compare'}" style="float:right" />
+		<input type="submit" class="button" value="{l s='Compare'}" />
 		<input type="hidden" name="compare_product_list" class="compare_product_list" value="" />
 		</p>
 	</form>
+                </div>
 {/if}
 

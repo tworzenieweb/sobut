@@ -1,6 +1,6 @@
 <?php
 /*
-* 2007-2012 PrestaShop
+* 2007-2011 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -19,8 +19,8 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2012 PrestaShop SA
-*  @version  Release: $Revision: 16832 $
+*  @copyright  2007-2011 PrestaShop SA
+*  @version  Release: $Revision: 11418 $
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
@@ -60,8 +60,7 @@ class CategoryControllerCore extends FrontController
 			if (!preg_match('/^'.Tools::pRegexp($currentURL, '/').'([&?].*)?$/', Tools::getProtocol().$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']))
 			{
 				header('HTTP/1.0 301 Moved');
-				header('Cache-Control: no-cache');
-				if (defined('_PS_MODE_DEV_') && _PS_MODE_DEV_)
+				if (defined('_PS_MODE_DEV_') AND _PS_MODE_DEV_ )
 					die('[Debug] This page has moved<br />Please use the following URL instead: <a href="'.$currentURL.'">'.$currentURL.'</a>');
 				Tools::redirectLink($currentURL);
 			}
@@ -106,7 +105,7 @@ class CategoryControllerCore extends FrontController
 				/* Scenes images formats */
 				if ($sceneImageTypes = ImageType::getImagesTypes('scenes'))
 				{
-					foreach ($sceneImageTypes as $sceneImageType)
+					foreach ($sceneImageTypes AS $sceneImageType)
 					{
 						if ($sceneImageType['name'] == 'thumb_scene')
 							$thumbSceneImageType = $sceneImageType;
@@ -121,7 +120,7 @@ class CategoryControllerCore extends FrontController
 				$subCategories = $this->category->getSubCategories((int)self::$cookie->id_lang);
 				self::$smarty->assign('category', $this->category);
 				
-				if (isset($subCategories) && !empty($subCategories) && $subCategories)
+				if (isset($subCategories) AND !empty($subCategories) AND $subCategories)
 				{
 					self::$smarty->assign('subcategories', $subCategories);
 					self::$smarty->assign(array(
@@ -164,17 +163,20 @@ class CategoryControllerCore extends FrontController
 		{
 			self::$smarty->assign('categoryNameComplement', '');
 			$this->nbProducts = $this->category->getProducts(NULL, NULL, NULL, $this->orderBy, $this->orderWay, true);
+            $this->manufacturers = $this->category->getProducts(NULL, NULL, NULL, $this->orderBy, $this->orderWay, false, false, false, 1, true, true);
 			$this->pagination((int)$this->nbProducts); // Pagination must be call after "getProducts"
 			$this->cat_products = $this->category->getProducts((int)(self::$cookie->id_lang), (int)($this->p), (int)($this->n), $this->orderBy, $this->orderWay);
+            
 		}
 		else // Hook executed, use the override
 			$this->pagination((int)$this->nbProducts); // Pagination must be call after "getProducts"
-		self::$smarty->assign('nb_products', (int)$this->nbProducts);
+		self::$smarty->assign(array('nb_products' => (int)$this->nbProducts, 'manufacturers' => $this->manufacturers));
 	}
 
 	public function displayContent()
 	{
 		parent::displayContent();
+		self::$smarty->assign('categoryNameComplement', '');
 		self::$smarty->display(_PS_THEME_DIR_.'category.tpl');
 	}
 }

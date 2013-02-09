@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-01-24 00:21:26
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:07:51
          compiled from "/home/tworzenieweb/www/goldenbody/modules/homenewproducts/homenewproducts.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:241913276510070763c1175-96612705%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:191697914051155b178a6852-20281112%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '71fee1d3f229fbfc3281f26ddbbe5b01bf4a9d11' => 
     array (
       0 => '/home/tworzenieweb/www/goldenbody/modules/homenewproducts/homenewproducts.tpl',
-      1 => 1358980928,
+      1 => 1359760625,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '241913276510070763c1175-96612705',
+  'nocache_hash' => '191697914051155b178a6852-20281112',
   'function' => 
   array (
   ),
@@ -23,7 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nbItemsPerLine' => 0,
     'nbLines' => 0,
     'liHeight' => 0,
-    'ulHeight' => 0,
     'product' => 0,
     'homeSize' => 0,
     'priceDisplay' => 0,
@@ -33,26 +32,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_51007076509ba5_93143676',
+  'unifunc' => 'content_51155b179e85e5_89622770',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51007076509ba5_93143676')) {function content_51007076509ba5_93143676($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_51155b179e85e5_89622770')) {function content_51155b179e85e5_89622770($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 if (!is_callable('smarty_modifier_date_format')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.date_format.php';
 ?><!-- MODULE Home Featured Products -->
 <div id="featured-products_block_center" class="block products_block">
-	<h4><?php echo smartyTranslate(array('s'=>'New products','od'=>'homenewproducts'),$_smarty_tpl);?>
+	<h4><?php echo smartyTranslate(array('s'=>'Nowości','od'=>'homenewproducts'),$_smarty_tpl);?>
 <span class="see_all"><a href="<?php echo $_smarty_tpl->tpl_vars['link']->value->getPageLink('new-products.php');?>
-" title="<?php echo smartyTranslate(array('s'=>'See all','od'=>'homenewproducts'),$_smarty_tpl);?>
-"><?php echo smartyTranslate(array('s'=>'See all','od'=>'homenewproducts'),$_smarty_tpl);?>
+" title="<?php echo smartyTranslate(array('s'=>'Pokaż wszystkie','od'=>'homenewproducts'),$_smarty_tpl);?>
+"><?php echo smartyTranslate(array('s'=>'Pokaż wszystkie','od'=>'homenewproducts'),$_smarty_tpl);?>
 </a></span></h4>
     <?php if (isset($_smarty_tpl->tpl_vars['new_products']->value)&&$_smarty_tpl->tpl_vars['new_products']->value){?>  
         <div class="block_content">
-			<?php $_smarty_tpl->tpl_vars['liHeight'] = new Smarty_variable(342, null, 0);?>
+			<?php $_smarty_tpl->tpl_vars['liHeight'] = new Smarty_variable(142, null, 0);?>
 			<?php $_smarty_tpl->tpl_vars['nbItemsPerLine'] = new Smarty_variable(3, null, 0);?>
 			<?php $_smarty_tpl->tpl_vars['nbLi'] = new Smarty_variable(count($_smarty_tpl->tpl_vars['new_products']->value), null, 0);?>
 			<?php $_smarty_tpl->tpl_vars['nbLines'] = new Smarty_variable(ceil(($_smarty_tpl->tpl_vars['nbLi']->value/$_smarty_tpl->tpl_vars['nbItemsPerLine']->value)), null, 0);?>
 			<?php $_smarty_tpl->tpl_vars['ulHeight'] = new Smarty_variable($_smarty_tpl->tpl_vars['nbLines']->value*$_smarty_tpl->tpl_vars['liHeight']->value, null, 0);?>
-    		<ul style="height:<?php echo $_smarty_tpl->tpl_vars['ulHeight']->value;?>
-px;" >
+    		<ul >
     		<?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['new_products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['product']->total= $_smarty_tpl->_count($_from);
@@ -99,7 +97,7 @@ $_smarty_tpl->tpl_vars['product']->_loop = true;
                <?php }?>
 			   <a class="button" href="<?php echo $_smarty_tpl->tpl_vars['product']->value['link'];?>
 " title="<?php echo smartyTranslate(array('s'=>'View','mod'=>'homefeatured'),$_smarty_tpl);?>
-"><?php echo smartyTranslate(array('s'=>'View','mod'=>'homefeatured'),$_smarty_tpl);?>
+"><?php echo smartyTranslate(array('s'=>'Zobacz','mod'=>'homefeatured'),$_smarty_tpl);?>
 </a>
 					
 						
@@ -110,12 +108,13 @@ $_smarty_tpl->tpl_vars['product']->_loop = true;
 </span>
 							<?php }?>
 						<?php }else{ ?>
-							<div style="height:23px;"></div>
+							<div></div>
 						<?php }?>
 					</div>
                 </li>
     		<?php } ?>
     		</ul>	
+                <div class="clear"></div>
         </div>
 	<?php }else{ ?>
 		<p><?php echo smartyTranslate(array('s'=>'No new products at this time','mod'=>'blocknewproducts'),$_smarty_tpl);?>

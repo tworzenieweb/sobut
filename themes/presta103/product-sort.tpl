@@ -42,7 +42,7 @@
 {literal}
 $(document).ready(function()
 {
-	$('#selectPrductSort').change(function()
+	$('#selectProductSort').change(function()
 	{
 		var requestSortProducts = '{/literal}{$request}{literal}';
 		var splitData = $(this).val().split(':');
@@ -54,8 +54,26 @@ $(document).ready(function()
 </script>
 
 <form id="productsSortForm" action="{$request|escape:'htmlall':'UTF-8'}">
-	<p class="select">
-		<select id="selectPrductSort">
+    <div class="spacer10"></div>  
+            {if $products > 0 and isset($manufacturers)}         
+            <div class="filterManufacturer">
+                <label for="selectManufacturerSort">{l s='filtruj producenta'}</label>
+                <select id="selectManufacturerSort" onchange="document.location.href = $(this).val();">   
+                <option value="{$link->addSortDetails($request, 'manufacturer_name', '0')|escape:'htmlall':'UTF-8'}">{l s='--'}</option>
+
+                    
+                    {foreach from=$manufacturers item=manufacturer_sort}
+                        <option value="{$link->addSortDetails($request, 'manufacturer_name', {$manufacturer_sort.id_manufacturer})|escape:'htmlall':'UTF-8'}" {if $orderby eq 'manufacturer_name' AND $orderway eq $manufacturer_sort.id_manufacturer}selected="selected"{/if}>{$manufacturer_sort.manufacturers|escape:'htmlall':'UTF-8'}</option>
+                    {/foreach}
+                  
+
+                </select>
+        
+        </div>
+    {/if}
+    <div class="sortProduct">
+                <label for="selectProductSort">{l s='Sort by'}</label>
+		<select id="selectProductSort">
 			<option value="{$orderbydefault|escape:'htmlall':'UTF-8'}:{$orderwaydefault|escape:'htmlall':'UTF-8'}" {if $orderby eq $orderbydefault}selected="selected"{/if}>{l s='--'}</option>
 			{if !$PS_CATALOG_MODE}
 				<option value="price:asc" {if $orderby eq 'price' AND $orderway eq 'asc'}selected="selected"{/if}>{l s='Price: lowest first'}</option>
@@ -67,8 +85,9 @@ $(document).ready(function()
 				<option value="quantity:desc" {if $orderby eq 'quantity' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='In-stock first'}</option>
 			{/if}
 		</select>
-		<label for="selectPrductSort">{l s='Sort by'}</label>
-	</p>
+		
+	</div>
+                <div class="clear"></div>
 </form>
 <!-- /Sort products -->
 {/if}
