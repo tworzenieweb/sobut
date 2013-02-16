@@ -119,8 +119,10 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 </script>
 
 {include file="$tpl_dir./breadcrumb.tpl"}
+<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
+<div class="product_block">
 <div id="primary_block" class="clearfix">
-	<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
+
 
 	{if isset($adminActionDisplay) && $adminActionDisplay}
 	<div id="admin-action">
@@ -180,33 +182,14 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 			{if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
 			<li><a href="javascript:print();">{l s='Print'}</a><br class="clear" /></li>
 			{if $have_image && !$jqZoomEnabled}
-			<li><span id="view_full_size" class="span_link">{l s='View full size'}</span></li>
+			<li><span id="view_full_size" class="span_link">{l s='Pokaż pełen rozmiar'}</span></li>
 			{/if}
 		</ul>
 	</div>
 
 	<!-- left infos-->
 	<div id="pb-left-column">
-		{if $product->description_short OR $packItems|@count > 0}
-		<div id="short_description_block">
-			{if $product->description_short}
-				<div id="short_description_content" class="rte align_justify">{$product->description_short}</div>
-			{/if}
-			{if $product->description}
-			<p class="buttons_bottom_block"><a href="javascript:{ldelim}{rdelim}" class="button">{l s='More details'}</a></p>
-			{/if}
-			{if $packItems|@count > 0}
-				<h3>{l s='Pack content'}</h3>
-				{foreach from=$packItems item=packItem}
-					<div class="pack_content">
-						{$packItem.pack_quantity} x <a href="{$link->getProductLink($packItem.id_product, $packItem.link_rewrite, $packItem.category)}">{$packItem.name|escape:'htmlall':'UTF-8'}</a>
-						<p>{$packItem.description_short}</p>
-					</div>
-				{/foreach}
-			{/if}
-		</div>
-		{/if}
-
+		
 		{if isset($colors) && $colors}
 		<!-- colors -->
 		<div id="color_picker">
@@ -233,29 +216,35 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				<input type="hidden" name="id_product_attribute" id="idCombination" value="" />
 			</p>
 
-			<!-- prices -->
-			{if $product->show_price AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
+			 <table id="buy_table">
+                             <thead>
+                            <tr>
+                                <th width="50%">CENA</th>
+                                <th width="25%">ILOŚĆ</th>
+                                <th width="25%">DO KOSZYKA</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                
+                                    {if $product->show_price AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
 				<p class="price">
+					{if !isset($priceDisplayPrecision)}
+						{assign var='priceDisplayPrecision' value=2}
+					{/if}
 					{if !$priceDisplay || $priceDisplay == 2}
-						{assign var='productPrice' value=$product->getPrice(true, $smarty.const.NULL, 2)}
+						{assign var='productPrice' value=$product->getPrice(true, $smarty.const.NULL, $priceDisplayPrecision)}
 						{assign var='productPriceWithoutRedution' value=$product->getPriceWithoutReduct(false, $smarty.const.NULL)}
 					{elseif $priceDisplay == 1}
-						{assign var='productPrice' value=$product->getPrice(false, $smarty.const.NULL, 2)}
+						{assign var='productPrice' value=$product->getPrice(false, $smarty.const.NULL, $priceDisplayPrecision)}
 						{assign var='productPriceWithoutRedution' value=$product->getPriceWithoutReduct(true, $smarty.const.NULL)}
 					{/if}
-					{if $product->on_sale}
-						<img src="{$img_dir}onsale_{$lang_iso}.gif" alt="{l s='On sale'}" class="on_sale_img"/>
-						<span class="on_sale">{l s='On sale!'}</span>
-					{elseif $product->specificPrice AND $product->specificPrice.reduction AND $productPriceWithoutRedution > $productPrice}
-						<span class="discount">{l s='Reduced price!'}</span>
-					{/if}
-					<br />
+
 					<span class="our_price_display">
 					{if $priceDisplay >= 0 && $priceDisplay <= 2}
 						<span id="our_price_display">{convertPrice price=$productPrice}</span>
-							{if $tax_enabled  && ((isset($display_tax_label) && $display_tax_label == 1) OR !isset($display_tax_label))}
-								{if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}
-							{/if}
+							
 					{/if}
 					</span>
 					{if $priceDisplay == 2}
@@ -298,58 +287,30 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				{/if}
 				{*close if for show price*}
 			{/if}
-
-			{if isset($groups)}
-			<!-- attributes -->
-			<div id="attributes">
-			{foreach from=$groups key=id_attribute_group item=group}
-			{if $group.attributes|@count}
-			<p>
-				<label for="group_{$id_attribute_group|intval}">{$group.name|escape:'htmlall':'UTF-8'} :</label>
-				{assign var="groupName" value="group_$id_attribute_group"}
-				<select name="{$groupName}" id="group_{$id_attribute_group|intval}" onchange="javascript:findCombination();{if $colors|@count > 0}$('#wrapResetImages').show('slow');{/if};">
-					{foreach from=$group.attributes key=id_attribute item=group_attribute}
-						<option value="{$id_attribute|intval}"{if (isset($smarty.get.$groupName) && $smarty.get.$groupName|intval == $id_attribute) || $group.default == $id_attribute} selected="selected"{/if} title="{$group_attribute|escape:'htmlall':'UTF-8'}">{$group_attribute|escape:'htmlall':'UTF-8'}</option>
-					{/foreach}
-				</select>
+                                
+                                </td>
+                                <td>
+                                
+                                    <!-- quantity wanted -->
+			<p id="quantity_wanted_p"{if (!$allow_oosp && $product->quantity <= 0) OR $virtual OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>
+				<input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product->minimal_quantity > 1}{$product->minimal_quantity}{else}1{/if}{/if}" size="2" {if $product->minimal_quantity > 1}onkeyup="checkMinimalQuantity({$product->minimal_quantity});"{/if} />
 			</p>
-			{/if}
-			{/foreach}
-			</div>
-			{/if}
+                                
+                                </td>
+                          
+                                <td>
+                                {if (!$allow_oosp && $product->quantity <= 0) OR !$product->available_for_order OR (isset($restricted_country_mode) AND $restricted_country_mode) OR $PS_CATALOG_MODE}<div style="display:none">{/if}<input type="submit" name="Submit" value="{l s='Dodaj'}" class="exclusive" /></div>
+                                    
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
 
 			<p id="product_reference" {if isset($groups) OR !$product->reference}style="display: none;"{/if}><label for="product_reference">{l s='Reference :'} </label><span class="editable">{$product->reference|escape:'htmlall':'UTF-8'}</span></p>
 
-			<!-- quantity wanted -->
-			<p id="quantity_wanted_p"{if (!$allow_oosp && $product->quantity <= 0) OR $virtual OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>
-				<label>{l s='Quantity :'}</label>
-				<input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product->minimal_quantity > 1}{$product->minimal_quantity}{else}1{/if}{/if}" size="2" maxlength="3" {if $product->minimal_quantity > 1}onkeyup="checkMinimalQuantity({$product->minimal_quantity});"{/if} />
-			</p>
-
-			<!-- minimal quantity wanted -->
-			<p id="minimal_quantity_wanted_p"{if $product->minimal_quantity <= 1 OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>{l s='You must add '} <b id="minimal_quantity_label">{$product->minimal_quantity}</b> {l s=' as a minimum quantity to buy this product.'}</p>
-			{if $product->minimal_quantity > 1}
-			<script type="text/javascript">
-				checkMinimalQuantity();
-			</script>
-			{/if}
-
-			<!-- availability -->
-			<p id="availability_statut"{if ($product->quantity <= 0 && !$product->available_later && $allow_oosp) OR ($product->quantity > 0 && !$product->available_now) OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>
-				<span id="availability_label">{l s='Availability:'}</span>
-				<span id="availability_value"{if $product->quantity <= 0} class="warning_inline"{/if}>
-					{if $product->quantity <= 0}{if $allow_oosp}{$product->available_later}{else}{l s='This product is no longer in stock'}{/if}{else}{$product->available_now}{/if}
-				</span>
-			</p>
-
-			<!-- number of item in stock -->
-			{if ($display_qties == 1 && !$PS_CATALOG_MODE && $product->available_for_order)}
-			<p id="pQuantityAvailable"{if $product->quantity <= 0} style="display: none;"{/if}>
-				<span id="quantityAvailable">{$product->quantity|intval}</span>
-				<span {if $product->quantity > 1} style="display: none;"{/if} id="quantityAvailableTxt">{l s='item in stock'}</span>
-				<span {if $product->quantity == 1} style="display: none;"{/if} id="quantityAvailableTxtMultiple">{l s='items in stock'}</span>
-			</p>
-			{/if}
+			
 			<!-- Out of stock hook -->
 			{if !$allow_oosp}
 			<p id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
@@ -363,7 +324,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				<p>{l s='Online only'}</p>
 			{/if}
 
-			<p{if (!$allow_oosp && $product->quantity <= 0) OR !$product->available_for_order OR (isset($restricted_country_mode) AND $restricted_country_mode) OR $PS_CATALOG_MODE} style="display: none;"{/if} id="add_to_cart" class="buttons_bottom_block"><input type="submit" name="Submit" value="{l s='Add to cart'}" class="exclusive" /></p>
+			
 			{if isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS}{$HOOK_PRODUCT_ACTIONS}{/if}
 			<div class="clear"></div>
 		</form>
@@ -473,7 +434,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	</div>
 </div>
 {/if}
-
+</div>
 <!-- Customizable products -->
 {if $product->customizable}
 	<ul class="idTabs">

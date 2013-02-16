@@ -51,10 +51,7 @@
 							<span class="exclusive">{l s='Add to cart'}</span>
 					{/if}
 				{/if}
-				<a class="button" href="{$product.link|escape:'htmlall':'UTF-8'}" title="{l s='View'}">{l s='View'}</a>
-				{if isset($comparator_max_item) && $comparator_max_item}
-					<p class="compare"><input type="checkbox" class="comparator" id="comparator_item_{$product.id_product}" value="comparator_item_{$product.id_product}" {if isset($compareProducts) && in_array($product.id_product, $compareProducts)}checked{/if}/> <label for="comparator_item_{$product.id_product}">{l s='Select to compare'}</label></p>
-				{/if}
+				
 			</div>
 		</li>
 	{/foreach}

@@ -18,13 +18,13 @@
 	list-style-type: none;
 	margin-top: 1em
 }
-#primary_block ul#usefull_link_block li { margin: 0.5em 1em 0.5em 0; display: block }
+#primary_block ul#usefull_link_block li { margin: 0.5em 1em 0.5em 0; display: block; float: left; }
 #primary_block ul#usefull_link_block li a,
 #primary_block ul#usefull_link_block span.span_link,
 #primary_block ul#usefull_link_block span.span_link:hover {
 	text-decoration: none;
 	color: #76839b;
-	font-size: 0.9em;
+	font-size: 1em;
 	background: white url('../img/bullet_alt.jpg') no-repeat top left;
 	padding-left: 15px;
 	height: 15px
@@ -32,7 +32,7 @@
 #primary_block #pb-left-column {
     float: left;
     margin-left: 1.1em;
-    width: 433px;
+    width: 386px;
 }
 #primary_block #short_description_block {
     background: url("../img/trans-bg.png") repeat scroll 0 0 #FFFFFF;
@@ -106,8 +106,7 @@
 #primary_block #buy_block label { text-align: right }
 #primary_block #buy_block label,#primary_block #buy_block select {
 	display: block;
-	width: 47%;
-	float: left
+	float: left;
 }
 #primary_block div#attributes p, #quantity_wanted_p {
 	clear: left;
@@ -120,9 +119,9 @@
 
 /* prices */
 #primary_block #buy_block p.price {
-	font-size: 30px;
-	text-align: left;
-        line-height: 15px;
+	font-size: 25px;
+text-align: left;
+line-height: 34px;
 }
 #primary_block #buy_block span#pretaxe_price {
 	font-size: 0.75em;
@@ -130,17 +129,17 @@
 }
 #primary_block #buy_block p#old_price {
 	font-size: 0.8em;
-	text-align: right;
+	text-align: left;
 	text-decoration: line-through
 }
 #primary_block #buy_block p#reduction_percent {
 	color: #da0f00;
 	font-size: 0.75em;
-	text-align: right
+	text-align: left;
 }
 #primary_block #buy_block p.price-ecotax {
 	font-size: 0.75em;
-	text-align: right
+	text-align: left;
 }
 #admin-action {
     color: #374853; 
@@ -157,4 +156,26 @@
 .product_accessories_price
 {
 	margin-top: 5px
+}
+
+
+.product_block {
+    background: #fff;
+    padding: 10px 29px;
+}
+
+
+#buy_table {
+    width: 100%;
+    
+}
+
+#buy_table th {
+    background: #a0a0a0;
+    color: #fff;
+    padding: 3px;
+}
+
+#buy_table td {
+    vertical-align: top;
 }

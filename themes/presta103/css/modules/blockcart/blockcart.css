@@ -105,15 +105,15 @@ background: #dfdfdf;
     
 
 text-decoration: none;
-background-color: #898BA8;
-background-image: -moz-linear-gradient(top, #878EA8, #8B87A8);
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#878EA8), to(#8B87A8));
-background-image: -webkit-linear-gradient(top, #878EA8, #8B87A8);
-background-image: -o-linear-gradient(top, #878EA8, #8B87A8);
-background-image: linear-gradient(to bottom, #878EA8, #8B87A8);
+background-color: #777255;
+background-image: -moz-linear-gradient(top, #777255, #737858);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#777255), to(#737858));
+background-image: -webkit-linear-gradient(top, #777255, #737858);
+background-image: -o-linear-gradient(top, #777255, #737858);
+background-image: linear-gradient(to bottom, #777255, #737858);
 background-repeat: repeat-x;
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff878ea8', endColorstr='#ff8b87a8', GradientType=0);
-border-color: #8B87A8 #8B87A8 #645F83;
+border-color: #737858 #737858 #645F83;
 border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 color: #fff;

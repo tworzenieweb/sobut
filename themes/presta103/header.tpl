@@ -75,17 +75,19 @@
 				<a id="header_logo" href="{$link->getPageLink('index.php')}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
 					<img class="logo" src="{$img_ps_dir}logo.png?{$img_update_time}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
 				</a>
-				<div class="quick-access">
+<!--				<div class="quick-access">
                 <div class="links">
   	            <li class="top-links-1"><a href="{$base_dir}new-products.php" title="">{l s='Nowości' mod='blockvariouslinks'}</a></li>
 		        <li class="top-links-2"><a href="{$base_dir}prices-drop.php" title="">{l s='Promocje' mod='blockvariouslinks'}</a></li>
 		        <li class="top-links-3"><a href="{$link->getPageLink('contact-form.php', true)}">{l s='contact' mod='blockpermanentlinks'}</a></li>
 
 	              </div>
-                </div>
+                </div>-->
 				<div id="header_right">
 					{$HOOK_TOP}
 				</div>
+                                <div id="bg">
+                                </div>
 			</div>
 			<div id="columns">
 				<!-- Left -->

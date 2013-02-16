@@ -69,7 +69,7 @@ ul#product_list li span.availability {
 	color: #488c40;
 	font-size: 0.9em
 }
-ul#product_list li a.button { margin-top: 0.5em }
+ul#product_list li a.button { margin-top: 0.5em; font-size: 11px; }
 ul#product_list li p.compare input { vertical-align: text-bottom }
 
 
@@ -81,8 +81,8 @@ ul#product_list li p.compare input { vertical-align: text-bottom }
 
 
 .product-content .listorgridswitch {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #fff;
+position: absolute;
+top: 12px;
+right: 25px;
+color: #fff;
 }

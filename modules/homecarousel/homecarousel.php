@@ -293,6 +293,63 @@ class HomeCarousel extends Module
 		/* Modify SQL result */
 		return Product::getProductsProperties($id_lang, $result);
 	}
+        
+        function hookTop($params)
+        {
+            global $smarty;
+            
+            $nb = (int)(Configuration::get('HOME_CAROUSEL_NBR'));
+            $sort = (int)(Configuration::get('HOME_CAROUSEL_SORT'));
+            $skipcategory = Configuration::get('HOME_CAROUSEL_SKIP_CAT');
+            
+            switch ($sort) {
+		    case '0':
+			$products = $this->getProducts($skipcategory,(int)($params['cookie']->id_lang), 1, ($nb ? $nb : 10));
+			break;
+		    case '1':
+			$products = $this->getProducts($skipcategory,(int)($params['cookie']->id_lang), 1, 1000);
+			shuffle($products);
+			array_splice($products, ($nb ? $nb : 10));
+			break;
+		    case '2':
+			$products = $this->getProducts($skipcategory,(int)($params['cookie']->id_lang), 1, ($nb ? $nb : 10), 'price', 'ASC');  
+			break;
+		    case '3':
+			$products = $this->getProducts($skipcategory,(int)($params['cookie']->id_lang), 1, ($nb ? $nb : 10), 'price', 'DESC');  
+			break;
+		    case '4':
+			$products = $this->getProducts((int)$skipcategory,$params['cookie']->id_lang, 1, ($nb ? $nb : 10), 'date_upd', 'DESC');  
+			break;
+		    case '5':
+			$products = $this->getProducts((int)$skipcategory,$params['cookie']->id_lang, 1, ($nb ? $nb : 10), 'date_add', 'DESC');  
+			break;
+		    case '6':
+			$products = $this->getProducts((int)$skipcategory,$params['cookie']->id_lang, 1, ($nb ? $nb : 10), 'name', 'ASC');  
+			break;
+		    default:
+			$products = $this->getProducts((int)$skipcategory,$params['cookie']->id_lang, 1, ($nb ? $nb : 10));
+			break;
+		}		
+
+		$smarty->assign(array(
+			'allow_buy_when_out_of_stock' => Configuration::get('PS_ORDER_OUT_OF_STOCK', false),
+			'max_quantity_to_allow_display' => Configuration::get('PS_LAST_QTIES'),
+//			'category' => $category,
+			'products' => $products,
+			'currency' => new Currency((int)($params['cart']->id_currency)),
+			'lang' => Language::getIsoById((int)($params['cookie']->id_lang)),
+			'productNumber' => sizeof($products),
+			'displayname' =>	Configuration::get('HOME_CAROUSEL_DISPLAY_NAME'),
+			'displayprice' =>	Configuration::get('HOME_CAROUSEL_DISPLAY_PRICE'),
+			'autoplay' => Configuration::get('HOME_CAROUSEL_AUTOPLAY'),
+			'autoplayduration' => Configuration::get('HOME_CAROUSEL_AUTOPLAY_DURATION'),
+			'itemsvisible' => Configuration::get('HOME_CAROUSEL_ITEMS_VISIBLE'),
+			'itemsscroll' => Configuration::get('HOME_CAROUSEL_ITEMS_SCROLL'),
+			'imagetype' => Configuration::get('HOME_CAROUSEL_IMAGE_TYPE')
+		));
+		return $this->display(__FILE__, 'homecarouselTop.tpl');
+            
+        }
 
 	function hookHome($params)
 	{

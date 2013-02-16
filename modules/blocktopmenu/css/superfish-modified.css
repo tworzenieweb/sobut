@@ -20,7 +20,7 @@
 }
 
 .sf-menu {
-    background: url("../img/trans-bg.png") repeat-x scroll 0 0 #878EA8;
+    background: url("../img/trans-bg.png") repeat-x scroll 0 0 #787157;
     float: left;
 	-webkit-border-bottom-right-radius: 5px;
 -webkit-border-bottom-left-radius: 5px;
@@ -97,7 +97,8 @@ ul.sf-menu li li li.sfHover ul {
 }
 .sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
 	color:			#ffffff;
-	font-size:12px
+	font-size:14px;
+        font-weight: bold;
 }
 .sf-menu a:active  { /* visited pseudo selector so IE6 applies text colour*/
 	color:			#464546;
