@@ -27,8 +27,10 @@
 {capture name=path}{l s='Your shopping cart'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
+<div class="block">
 <h1 id="cart_title">{l s='Shopping cart summary'}</h1>
 
+<div class="block_content">
 {assign var='current_step' value='summary'}
 {include file="$tpl_dir./order-steps.tpl"}
 {include file="$tpl_dir./errors.tpl"}
@@ -391,3 +393,6 @@
 </p>
 {/if}
 
+
+</div>
+</div>

@@ -2,7 +2,7 @@
 <module>
 	<name>jballegro</name>
 	<displayName><![CDATA[Jballegro]]></displayName>
-	<version><![CDATA[0.5]]></version>
+	<version><![CDATA[0.6.2]]></version>
 	<description><![CDATA[Integracja prestashop z allegro]]></description>
 	<author><![CDATA[jbator.pl]]></author>
 	<tab><![CDATA[]]></tab>

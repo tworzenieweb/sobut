@@ -26,11 +26,13 @@
 
 {capture name=path}{l s='My account'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
-
+<div class="block">
 <h1>{l s='My account'}</h1>
-<h4>{l s='Welcome to your account. Here you can manage your addresses and orders.'}</h4>
+<div class="block_content">
+    <br />
+<p>{l s='Witaj w swoim koncie, tutaj możesz zarządzać listą twoich zamówień i adresów'}</p>
 <ul>
-	<li><a href="{$link->getPageLink('history.php', true)}" title="{l s='Orders'}"><img src="{$img_dir}icon/order.gif" alt="{l s='Orders'}" class="icon" /></a><a href="{$link->getPageLink('history.php', true)}" title="{l s='Orders'}">{l s='History and details of my orders'}</a></li>
+	<li><a href="{$link->getPageLink('history.php', true)}" title="{l s='Orders'}"><img src="{$img_dir}icon/order.gif" alt="{l s='Orders'}" class="icon" /></a><a href="{$link->getPageLink('history.php', true)}" title="{l s='Orders'}">{l s='Historia zamówień'}</a></li>
 	{if $returnAllowed}
 		<li><a href="{$link->getPageLink('order-follow.php', true)}" title="{l s='Merchandise returns'}"><img src="{$img_dir}icon/return.gif" alt="{l s='Merchandise returns'}" class="icon" /></a><a href="{$link->getPageLink('order-follow.php', true)}" title="{l s='Merchandise returns'}">{l s='My merchandise returns'}</a></li>
 	{/if}
@@ -40,6 +42,8 @@
 	{if $voucherAllowed}
 		<li><a href="{$link->getPageLink('discount.php', true)}" title="{l s='Vouchers'}"><img src="{$img_dir}icon/voucher.gif" alt="{l s='Vouchers'}" class="icon" /></a><a href="{$link->getPageLink('discount.php', true)}" title="{l s='Vouchers'}">{l s='My vouchers'}</a></li>
 	{/if}
+        <li><a href="{$base_dir}" title="{l s='Home'}"><img src="{$img_dir}icon/home.gif" alt="{l s='Home'}" class="icon" /></a><a href="{$base_dir}" title="{l s='Home'}">{l s='Home'}</a></li>
 	{$HOOK_CUSTOMER_ACCOUNT}
 </ul>
-<p><a href="{$base_dir}" title="{l s='Home'}"><img src="{$img_dir}icon/home.gif" alt="{l s='Home'}" class="icon" /></a><a href="{$base_dir}" title="{l s='Home'}">{l s='Home'}</a></p>
+</div>
+</div>

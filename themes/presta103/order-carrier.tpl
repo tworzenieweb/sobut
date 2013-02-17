@@ -74,8 +74,9 @@
 {include file="$tpl_dir./breadcrumb.tpl"}
 {/if}
 
+<div class="block">
 {if !$opc}<h1>{l s='Shipping'}</h1>{else}<h2>2. {l s='Delivery methods'}</h2>{/if}
-
+<div class="block_content">
 {if !$opc}
 {assign var='current_step' value='shipping'}
 {include file="$tpl_dir./order-steps.tpl"}
@@ -192,3 +193,6 @@
 	</div>
 </div>
 {/if}
+<div class="clear"></div>
+</div>
+</div>

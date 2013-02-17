@@ -1902,14 +1902,14 @@ border-radius: 5px;
 
 #bg {
     
-    background: url("../img/body.png") no-repeat;
+    background: url("../img/body.jpg") no-repeat;
     width: 434px;
     height: 379px;
     display: block;
     width: 434px;
     z-index: -1;
     left: -91px;
-    top: 9px;
+    top: 10px;
     position: absolute;
     
 }

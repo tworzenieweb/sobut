@@ -40,8 +40,11 @@
 	{include file="$tpl_dir./breadcrumb.tpl"}
 {/if}
 
+<div class="block">
 {if !$opc}<h1>{l s='Choose your payment method'}</h1>{else}<h2>3. {l s='Choose your payment method'}</h2>{/if}
 
+
+<div class="block_content">
 {if !$opc}
 	{assign var='current_step' value='payment'}
 	{include file="$tpl_dir./order-steps.tpl"}
@@ -69,3 +72,6 @@
 	</div>
 {/if}
 
+<div class="clear"></div>
+</div>
+</div>

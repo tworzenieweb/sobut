@@ -157,7 +157,10 @@
 {include file="$tpl_dir./breadcrumb.tpl"}
 {/if}
 
+<div class="block">
 {if !$opc}<h1>{l s='Addresses'}</h1>{else}<h2>1. {l s='Addresses'}</h2>{/if}
+
+<div class="block_content">
 
 {if !$opc}
 {assign var='current_step' value='address'}
@@ -224,3 +227,6 @@
 {else}
 </div>
 {/if}
+<div class="clear"></div>
+</div>
+</div>

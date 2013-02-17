@@ -28,8 +28,11 @@
 {include file="$tpl_dir./breadcrumb.tpl"}
 {include file="$tpl_dir./errors.tpl"}
 
+<div class="block">
 <h1>{l s='Order history'}</h1>
-<p>{l s='Here are the orders you have placed since the creation of your account'}.</p>
+<div class="block_content">
+    <br />
+<p>{l s='Poniżej lista wszystkich Twoich zamówień'}.</p>
 
 {if $slowValidation}<p class="warning">{l s='If you have just placed an order, it may take a few minutes for it to be validated. Please refresh the page if your order is missing.'}</p>{/if}
 
@@ -84,3 +87,5 @@
 	<li><a href="{$link->getPageLink('my-account.php', true)}"><img src="{$img_dir}icon/my-account.gif" alt="" class="icon" /></a><a href="{$link->getPageLink('my-account.php', true)}">{l s='Back to Your Account'}</a></li>
 	<li><a href="{$base_dir}"><img src="{$img_dir}icon/home.gif" alt="" class="icon" /></a><a href="{$base_dir}">{l s='Home'}</a></li>
 </ul>
+</div>
+</div>

@@ -1,6 +1,6 @@
 /* adresses */
 div.addresses {
-	border: 1px solid #d0d3d8;
+	border: 1px solid #da0f00;
 	background: #D0D1D5 url('../img/form_bg.jpg') repeat-x top left;
 	padding: 0.6em;
 	position: relative;
@@ -37,17 +37,17 @@ li.address_title {
 	line-height: 1.9em
 }
 ul.item li.address_title {
-    background: url("../img/trans-bg.png") repeat scroll 0 0 #A39696;
+    background: url("../img/trans-bg.png") repeat scroll 0 0 #c7bfb4;
 }
 ul.alternate_item li.address_title {
-    background: url("../img/trans-bg.png") repeat scroll 0 0 #A39696;
+    background: url("../img/trans-bg.png") repeat scroll 0 0 #c7bfb4;
 }
 ul.full_width li.address_title { background-image: url('../img/address_alias_full_width.gif') }
 li.address_name,
 li.address_firstname,
 li.address_lastname,
  li.address_update a,
- li.address_delete a { color: #dd2a81 }
+ li.address_delete a { color: #da0f00 }
 li.address_name,
 li.address_firstname,
 li.address_lastname,
@@ -57,7 +57,7 @@ span.address_name,
 span.address_firstname,
 span.address_lastname,
 span.address_update a,
-span.address_delete a { color: #dd2a81 }
+span.address_delete a { color: #da0f00 }
 span.address_name,
 span.address_firstname,
 span.address_lastname,
