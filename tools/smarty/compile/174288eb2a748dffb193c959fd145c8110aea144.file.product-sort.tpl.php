@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:09:37
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-17 21:53:22
          compiled from "/home/tworzenieweb/www/goldenbody/themes/presta103/product-sort.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:153501071251155b816ec027-04846119%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:202671736451214342d7a8f5-76228972%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '174288eb2a748dffb193c959fd145c8110aea144' => 
     array (
       0 => '/home/tworzenieweb/www/goldenbody/themes/presta103/product-sort.tpl',
-      1 => 1359225377,
+      1 => 1361133669,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '153501071251155b816ec027-04846119',
+  'nocache_hash' => '202671736451214342d7a8f5-76228972',
   'function' => 
   array (
   ),
@@ -27,6 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'request' => 0,
     'products' => 0,
     'manufacturers' => 0,
+    'ignore' => 0,
     'manufacturer_sort' => 0,
     'orderbydefault' => 0,
     'orderwaydefault' => 0,
@@ -34,9 +35,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_51155b818a9d73_11083820',
+  'unifunc' => 'content_51214342e92e06_55025990',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51155b818a9d73_11083820')) {function content_51155b818a9d73_11083820($_smarty_tpl) {?><?php if (!is_callable('smarty_function_cycle')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/function.cycle.php';
+<?php if ($_valid && !is_callable('content_51214342e92e06_55025990')) {function content_51214342e92e06_55025990($_smarty_tpl) {?><?php if (!is_callable('smarty_function_cycle')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/function.cycle.php';
 if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 ?><?php echo smarty_function_cycle(array('name'=>"clorg",'values'=>"prolog,epilog",'assign'=>"clorg"),$_smarty_tpl);?>
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['lorg_tpldir']->value)."./modules/listorgridswitch/listorgridswitch.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('cycle'=>$_smarty_tpl->tpl_vars['clorg']->value), 0);?>
@@ -75,7 +76,7 @@ $(document).ready(function()
 <form id="productsSortForm" action="<?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['request']->value, 'htmlall', 'UTF-8');?>
 ">
     <div class="spacer10"></div>  
-            <?php if ($_smarty_tpl->tpl_vars['products']->value>0&&isset($_smarty_tpl->tpl_vars['manufacturers']->value)){?>         
+            <?php if ($_smarty_tpl->tpl_vars['products']->value>0&&isset($_smarty_tpl->tpl_vars['manufacturers']->value)&&!isset($_smarty_tpl->tpl_vars['ignore']->value)){?>         
             <div class="filterManufacturer">
                 <label for="selectManufacturerSort"><?php echo smartyTranslate(array('s'=>'filtruj producenta'),$_smarty_tpl);?>
 </label>

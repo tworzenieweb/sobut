@@ -28,9 +28,12 @@
 
 {include file="$tpl_dir./errors.tpl"}
 
+<div class="block">
+    
 {if !isset($errors) OR !sizeof($errors)}
 	<h1>{l s='List of products by manufacturer:'}&nbsp;{$manufacturer->name|escape:'htmlall':'UTF-8'}</h1>
-
+<div class="block_content">
+    <br />
 	{if $products}
 		{include file="$tpl_dir./product-sort.tpl"}
 		{include file="$tpl_dir./product-list.tpl" products=$products}
@@ -39,3 +42,7 @@
 		<p class="warning">{l s='No products for this manufacturer.'}</p>
 	{/if}
 {/if}
+
+<div class="clear"></div>
+</div>
+</div>

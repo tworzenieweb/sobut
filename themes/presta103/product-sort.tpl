@@ -55,7 +55,7 @@ $(document).ready(function()
 
 <form id="productsSortForm" action="{$request|escape:'htmlall':'UTF-8'}">
     <div class="spacer10"></div>  
-            {if $products > 0 and isset($manufacturers)}         
+            {if $products > 0 and isset($manufacturers) and not isset($ignore)}         
             <div class="filterManufacturer">
                 <label for="selectManufacturerSort">{l s='filtruj producenta'}</label>
                 <select id="selectManufacturerSort" onchange="document.location.href = $(this).val();">   

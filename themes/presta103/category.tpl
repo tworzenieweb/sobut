@@ -29,7 +29,8 @@
 
 {if isset($category)}
 	{if $category->id AND $category->active}
-
+            <div class="block">
+                
 		<h1>
 			{strip}
 				{$category->name|escape:'htmlall':'UTF-8'}
@@ -41,7 +42,8 @@
 				</span>
 			{/strip}
 		</h1>
-
+<div class="block_content">
+    <br />
 		{if $scenes}
 			<!-- Scenes -->
 			{include file="$tpl_dir./scenes.tpl" scenes=$scenes}
@@ -92,5 +94,8 @@
 	{elseif $category->id}
 		<p class="warning">{l s='This category is currently unavailable.'}</p>
 	{/if}
+        </div>
+        <div class="clear"></div>
+        </div>
         </div>
 {/if}

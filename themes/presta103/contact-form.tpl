@@ -27,8 +27,11 @@
 {capture name=path}{l s='Contact'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
+<div class="block">
+    
 <h1>{l s='Customer Service'} - {if isset($customerThread) && $customerThread}{l s='Your reply'}{else}{l s='Contact us'}{/if}</h1>
-
+<div class="block_content">
+    <br />
 {if isset($confirmation)}
 	<p>{l s='Your message has been successfully sent to our team.'}</p>
 	<ul class="footer_links">
@@ -119,3 +122,6 @@
 	</fieldset>
 </form>
 {/if}
+<div class="clear"></div>
+</div>
+</div>

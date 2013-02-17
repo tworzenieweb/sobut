@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:09:37
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-17 21:53:22
          compiled from "/home/tworzenieweb/www/goldenbody/themes/presta103/product-list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:162217152451155b819041f4-02844823%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:211182166451214342ecd2d2-92129423%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '68e8e3d8127e053bd68586b4249e53b7a2f2d1d3' => 
     array (
       0 => '/home/tworzenieweb/www/goldenbody/themes/presta103/product-list.tpl',
-      1 => 1358980903,
+      1 => 1361039398,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '162217152451155b819041f4-02844823',
+  'nocache_hash' => '211182166451214342ecd2d2-92129423',
   'function' => 
   array (
   ),
@@ -26,14 +26,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'priceDisplay' => 0,
     'add_prod_display' => 0,
     'static_token' => 0,
-    'comparator_max_item' => 0,
-    'compareProducts' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_51155b81aa9667_68327678',
+  'unifunc' => 'content_51214343103a38_09284647',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51155b81aa9667_68327678')) {function content_51155b81aa9667_68327678($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_51214343103a38_09284647')) {function content_51214343103a38_09284647($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 ?>
 
 <?php if (isset($_smarty_tpl->tpl_vars['products']->value)){?>
@@ -106,17 +104,7 @@ $_smarty_tpl->tpl_vars['product']->_loop = true;
 </span>
 					<?php }?>
 				<?php }?>
-				<a class="button" href="<?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['product']->value['link'], 'htmlall', 'UTF-8');?>
-" title="<?php echo smartyTranslate(array('s'=>'View'),$_smarty_tpl);?>
-"><?php echo smartyTranslate(array('s'=>'View'),$_smarty_tpl);?>
-</a>
-				<?php if (isset($_smarty_tpl->tpl_vars['comparator_max_item']->value)&&$_smarty_tpl->tpl_vars['comparator_max_item']->value){?>
-					<p class="compare"><input type="checkbox" class="comparator" id="comparator_item_<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
-" value="comparator_item_<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
-" <?php if (isset($_smarty_tpl->tpl_vars['compareProducts']->value)&&in_array($_smarty_tpl->tpl_vars['product']->value['id_product'],$_smarty_tpl->tpl_vars['compareProducts']->value)){?>checked<?php }?>/> <label for="comparator_item_<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
-"><?php echo smartyTranslate(array('s'=>'Select to compare'),$_smarty_tpl);?>
-</label></p>
-				<?php }?>
+				
 			</div>
 		</li>
 	<?php } ?>

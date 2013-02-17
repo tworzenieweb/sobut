@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:07:51
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-17 21:52:44
          compiled from "/home/tworzenieweb/www/goldenbody/themes/presta103/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:142651249151155b176395e0-29225750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:784952255121431c292b61-57126022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1bc8bf261d5388e909309ac4bde3813041a97173' => 
     array (
       0 => '/home/tworzenieweb/www/goldenbody/themes/presta103/header.tpl',
-      1 => 1358982796,
+      1 => 1361122529,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '142651249151155b176395e0-29225750',
+  'nocache_hash' => '784952255121431c292b61-57126022',
   'function' => 
   array (
   ),
@@ -43,17 +43,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'geolocation_country' => 0,
     'link' => 0,
     'shop_name' => 0,
-    'logo_image_width' => 0,
-    'logo_image_height' => 0,
     'base_dir' => 0,
     'HOOK_TOP' => 0,
     'HOOK_LEFT_COLUMN' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_51155b1771eeb3_96804070',
+  'unifunc' => 'content_5121431c355407_15917891',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51155b1771eeb3_96804070')) {function content_51155b1771eeb3_96804070($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_5121431c355407_15917891')) {function content_5121431c355407_15917891($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -138,14 +136,9 @@ $_smarty_tpl->tpl_vars['js_uri']->_loop = true;
 				<a id="header_logo" href="<?php echo $_smarty_tpl->tpl_vars['link']->value->getPageLink('index.php');?>
 " title="<?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['shop_name']->value, 'htmlall', 'UTF-8');?>
 ">
-					<img class="logo" src="<?php echo $_smarty_tpl->tpl_vars['img_ps_dir']->value;?>
-logo.png?<?php echo $_smarty_tpl->tpl_vars['img_update_time']->value;?>
-" alt="<?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['shop_name']->value, 'htmlall', 'UTF-8');?>
-" <?php if ($_smarty_tpl->tpl_vars['logo_image_width']->value){?>width="<?php echo $_smarty_tpl->tpl_vars['logo_image_width']->value;?>
-"<?php }?> <?php if ($_smarty_tpl->tpl_vars['logo_image_height']->value){?>height="<?php echo $_smarty_tpl->tpl_vars['logo_image_height']->value;?>
-" <?php }?> />
+					
 				</a>
-				<div class="quick-access">
+<!--				<div class="quick-access">
                 <div class="links">
   	            <li class="top-links-1"><a href="<?php echo $_smarty_tpl->tpl_vars['base_dir']->value;?>
 new-products.php" title=""><?php echo smartyTranslate(array('s'=>'Nowości','mod'=>'blockvariouslinks'),$_smarty_tpl);?>
@@ -158,11 +151,13 @@ prices-drop.php" title=""><?php echo smartyTranslate(array('s'=>'Promocje','mod'
 </a></li>
 
 	              </div>
-                </div>
+                </div>-->
 				<div id="header_right">
 					<?php echo $_smarty_tpl->tpl_vars['HOOK_TOP']->value;?>
 
 				</div>
+                                <div id="bg">
+                                </div>
 			</div>
 			<div id="columns">
 				<!-- Left -->

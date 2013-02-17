@@ -27,8 +27,9 @@
 {capture name=path}{l s='Order confirmation'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
+<div class="block">
 <h1>{l s='Order confirmation'}</h1>
-
+<div class="block_content">
 {assign var='current_step' value='payment'}
 {include file="$tpl_dir./order-steps.tpl"}
 
@@ -46,3 +47,4 @@
 	<a href="{$link->getPageLink('history.php', true)}" title="{l s='Back to orders'}"><img src="{$img_dir}icon/order.gif" alt="{l s='Back to orders'}" class="icon" /></a>
 	<a href="{$link->getPageLink('history.php', true)}" title="{l s='Back to orders'}">{l s='Back to orders'}</a>
 {/if}
+</div>

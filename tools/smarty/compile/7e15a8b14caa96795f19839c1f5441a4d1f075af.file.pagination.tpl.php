@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2013-02-08 21:09:37
+<?php /* Smarty version Smarty-3.1.11, created on 2013-02-17 21:53:23
          compiled from "/home/tworzenieweb/www/goldenbody/themes/presta103/pagination.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:48297862751155b81ab4753-86774316%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:13137183345121434310d6c8-52126593%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '48297862751155b81ab4753-86774316',
+  'nocache_hash' => '13137183345121434310d6c8-52126593',
   'function' => 
   array (
   ),
@@ -46,9 +46,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_51155b81ca33c7_17744117',
+  'unifunc' => 'content_512143432fefb4_91511042',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51155b81ca33c7_17744117')) {function content_51155b81ca33c7_17744117($_smarty_tpl) {?><?php if (!is_callable('smarty_function_cycle')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/function.cycle.php';
+<?php if ($_valid && !is_callable('content_512143432fefb4_91511042')) {function content_512143432fefb4_91511042($_smarty_tpl) {?><?php if (!is_callable('smarty_function_cycle')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/function.cycle.php';
 if (!is_callable('smarty_modifier_escape')) include '/home/tworzenieweb/www/goldenbody/tools/smarty/plugins/modifier.escape.php';
 ?><?php echo smarty_function_cycle(array('name'=>"clorg",'values'=>"prolog,epilog",'assign'=>"clorg"),$_smarty_tpl);?>
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['lorg_tpldir']->value)."./modules/listorgridswitch/listorgridswitch.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('cycle'=>$_smarty_tpl->tpl_vars['clorg']->value), 0);?>

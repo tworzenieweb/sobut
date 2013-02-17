@@ -26,8 +26,8 @@
 */
 
 /* Debug only */
-@ini_set('display_errors', 'on');
-define('_PS_DEBUG_SQL_', true);
+@ini_set('display_errors', 'off');
+define('_PS_DEBUG_SQL_', false);
 
 $start_time = microtime(true);
 

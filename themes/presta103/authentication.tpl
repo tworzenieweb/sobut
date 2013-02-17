@@ -109,7 +109,7 @@ $(function(){ldelim}
 			</p>
 			<p class="submit">
 			{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-				<input type="submit" id="SubmitCreate" name="SubmitCreate" class="button_large" value="{l s='Create your account'}" />
+				<input type="submit" id="SubmitCreate" name="SubmitCreate" class="button_large button" value="{l s='Create your account'}" />
 				<input type="hidden" class="hidden" name="SubmitCreate" value="{l s='Create your account'}" />
 			</p>
 		</fieldset>
@@ -501,7 +501,7 @@ $(function(){ldelim}
 		<input type="hidden" name="email_create" value="1" />
 		<input type="hidden" name="is_new_customer" value="1" />
 		{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-		<input type="submit" name="submitAccount" id="submitAccount" value="{l s='Register'}" class="exclusive" />
+		<input type="submit" name="submitAccount" id="submitAccount" value="{l s='Register'}" class="exclusive button" />
 		<span><sup>*</sup>{l s='Required field'}</span>
 	</p>
 

@@ -413,7 +413,7 @@ form.std h3 {
 }
 form.std fieldset {
     background: url("../img/trans-bg.png") repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #D0D3D8;
+    border: none;
     margin-bottom: 1em;
     padding-bottom: 1em;
 }
@@ -803,7 +803,7 @@ div.exclusive .block_content {
 /* block in the center column */
 #center_column p { margin: 0.5em 0; padding-left: 0.7em }
 #center_column div.block {
-    margin-top: 13px;
+    margin-top: 0;
     width: 767px;
 }
 #center_column div.block h4 {

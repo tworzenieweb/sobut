@@ -40,12 +40,20 @@
 			</p>
 		</div>
 	{/if}
-	<div class="rte{if $content_only} content_only{/if}">
+	<div class="block">
+            <h1>{$cms->meta_title}</h1>
+            <div class="block_content">
+                <br />
+                <div class="rte {if $content_only} content_only{/if}">
 		{$cms->content}
+                </div>
+                <div class="clear"></div>
+            </div>
 	</div>
 {elseif isset($category)}
-	<div class="block-cms">
+	<div class="block-cms block">
 		<h1><a href="{if $category->id eq 1}{$base_dir}{else}{$link->getCategoryLink($category->id, $category->link_rewrite)}{/if}">{$category->name|escape:'htmlall':'UTF-8'}</a></h1>
+                <div class="block_content">
 		{if isset($sub_category) & !empty($sub_category)}	
 			<h4>{l s='List of sub categories in '}{$category->name}{l s=':'}</h4>
 			<ul class="bullet">
@@ -66,8 +74,9 @@
 				{/foreach}
 			</ul>
 		{/if}
-	</div>
+                <br />
+                </div>
 {else}
 	{l s='This page does not exist.'}
 {/if}
-<br />
+    </div>
