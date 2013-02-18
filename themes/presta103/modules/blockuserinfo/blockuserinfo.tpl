@@ -57,7 +57,7 @@
 			
 		</li>
                 <li id="contact">
-                    <a href="{$link->getPageLink('contact-form.php', true)}">Formularz Kontaktowy</a>
+                    <a href="{$link->getPageLink('contact-form.php', true)}">Kontakt</a>
                 </li>
 		{/if}
 		<li id="your_account"><a href="{$link->getPageLink('my-account.php', true)}" title="{l s='Your Account' mod='blockuserinfo'}">{l s='Your Account' mod='blockuserinfo'}</a></li>

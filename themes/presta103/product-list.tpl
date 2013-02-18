@@ -48,7 +48,7 @@
 					{if ($product.allow_oosp || $product.quantity > 0)}
 						<a class="button ajax_add_to_cart_button exclusive" rel="ajax_id_product_{$product.id_product|intval}" href="{$link->getPageLink('cart.php')}?add&amp;id_product={$product.id_product|intval}{if isset($static_token)}&amp;token={$static_token}{/if}" title="{l s='Add to cart'}">{l s='Add to cart'}</a>
 					{else}
-							<span class="exclusive">{l s='Add to cart'}</span>
+							
 					{/if}
 				{/if}
 				

@@ -26,7 +26,7 @@
 						{if ($product.id_product_attribute == 0 OR (isset($add_prod_display) AND ($add_prod_display == 1))) AND $product.available_for_order AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
 							{if ($product.quantity > 0 OR $product.allow_oosp) AND $product.customizable != 2}
 							{else}
-							<span class="exclusive">{l s='Add to cart' mod='homefeatured'}</span>
+							<span class="exclusive">{l s='Do koszyka' mod='homenew'}</span>
 							{/if}
 						{else}
 							<div></div>

@@ -92,9 +92,16 @@ $(function(){ldelim}
 	{/literal}
 {/if}
 </script>
+
+<div class="block">
 <h1>{if !isset($email_create)}{l s='Log in'}{else}{l s='Create your account'}{/if}</h1>
+
+<div class="block_content">
+
 {assign var='current_step' value='login'}
 {include file="$tpl_dir./order-steps.tpl"}
+
+
 
 {include file="$tpl_dir./errors.tpl"}
 {assign var='stateExist' value=false}
@@ -102,7 +109,7 @@ $(function(){ldelim}
 	<form action="{$link->getPageLink('authentication.php', true)}" method="post" id="create-account_form" class="std">
 		<fieldset>
 			<h3>{l s='Create your account'}</h3>
-			<h4>{l s='Enter your e-mail address to create an account'}.</h4>
+			<h5>{l s='Enter your e-mail address to create an account'}.</h5>
 			<p class="text">
 				<label for="email_create">{l s='E-mail address'}</label>
 				<span><input type="text" id="email_create" name="email_create" value="{if isset($smarty.post.email_create)}{$smarty.post.email_create|escape:'htmlall':'UTF-8'|stripslashes}{/if}" class="account_input" /></span>
@@ -508,3 +515,6 @@ $(function(){ldelim}
 </form>
 {/if}
 
+<div class="clear"></div>
+</div>
+</div>

@@ -32,6 +32,31 @@
 <h1>{l s='Customer Service'} - {if isset($customerThread) && $customerThread}{l s='Your reply'}{else}{l s='Contact us'}{/if}</h1>
 <div class="block_content">
     <br />
+    
+    
+    <table>
+        <tr>
+            <td valign="top" width="50%">
+            
+<h2>GOLDEN BODY</h2>
+    <p>Łukasz Sobociński</p>
+    <p>Piłsudskiego 6</p>
+    <p>90-051 Łódź</p>
+            </td>
+            <td style="padding:0 20px;">
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+        src="https://maps.google.pl/maps?f=q&amp;source=s_q&amp;hl=pl&amp;geocode=&amp;q=Club+Sportera,+Aleja+Marsza%C5%82ka+J%C3%B3zefa+Pi%C5%82sudskiego,+%C5%81%C3%B3d%C5%BA&amp;aq=0&amp;sll=51.75996,19.459858&amp;sspn=0.001602,0.004128&amp;ie=UTF8&amp;t=m&amp;ll=51.76938,19.468803&amp;spn=0.01859,0.036478&amp;z=13&amp;output=embed&amp;iwloc=clear"></iframe>
+
+
+        
+<!-- iFrame code for AardvarkMap.net End -->
+            </td>
+        </tr>
+    </table>
+
+    
+    
+    
 {if isset($confirmation)}
 	<p>{l s='Your message has been successfully sent to our team.'}</p>
 	<ul class="footer_links">

@@ -879,7 +879,7 @@ box-shadow: 0 1px 5px rgba(13, 170, 206, 0.4)
     float: left;
     margin: 10px;
     padding: 0 0 1px;
-    width: 230px;
+    width: 168px;
     position: relative;
 }
 #center_column .products_block ul .product_accessories_description {
@@ -915,8 +915,6 @@ box-shadow: 0 1px 5px rgba(13, 170, 206, 0.4)
     background-color: transparent;
     display: block;
     height: 129px;
-    margin-bottom: 2px;
-    margin-left: 56px;
     width: 129px;
 }
 #center_column div.products_block .product_accessories_description a.product_image {
@@ -948,6 +946,9 @@ box-shadow: 0 1px 5px rgba(13, 170, 206, 0.4)
     padding: 16px 0 0 16px;
     text-align: center;
     width: 84px;
+    position:absolute;
+    right: 5px;
+    top: 50px;
 }
 p.price_container { text-align: center; position: absolute; top: 10px; right: 10px; }
 #center_column .products_block .featured_price { margin-top: 2.5em }
@@ -962,13 +963,23 @@ p.price_container { text-align: center; position: absolute; top: 10px; right: 10
 }
 
 /* Special style for block accessories in center column (product page) */
-#center_column .products_block.accessories_block .block_content { background: none }
+#center_column .products_block.accessories_block .block_content { background: none;
+
+border: none;
+
+}
 #center_column div.products_block.accessories_block div.product_desc { 
 	margin-right: 0;
-	height: 150px; 
-	border-right: 1px solid #d0d3d8 
+	height: 100px; 
+	border-right: none;
 }
-#center_column .products_block.accessories_block .block_content li { background: none; text-align: center }
+#center_column .products_block.accessories_block .block_content li { 
+    background: none; text-align: left;
+    margin-right: 5px;
+    height: 200px;
+    position: relative;
+
+}
 #center_column .products_block.accessories_block .block_content li h5,
  #center_column .products_block.accessories_block .block_content li a.product_description { text-align:left }
 #center_column .products_block.accessories_block .block_content li.last_item a.product_image { border: none }

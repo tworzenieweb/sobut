@@ -277,12 +277,11 @@ class HomeCarousel extends Module
 	    LEFT JOIN `'._DB_PREFIX_.'tax` t ON (t.`id_tax` = tr.`id_tax`)
 		LEFT JOIN `'._DB_PREFIX_.'tax_lang` tl ON (t.`id_tax` = tl.`id_tax` AND tl.`id_lang` = '.(int)($id_lang).')
 		LEFT JOIN `'._DB_PREFIX_.'manufacturer` m ON m.`id_manufacturer` = p.`id_manufacturer`
-		WHERE cp.`id_category` NOT IN ('.$idcat.') AND p.`active` = 1
+		WHERE cp.`id_category` IN ('.$idcat.') AND p.`active` = 1
 		GROUP BY cp.`id_product`
 		ORDER BY '.(isset($orderByPrefix) ? $orderByPrefix.'.' : '').'`'.pSQL($orderBy).'` '.pSQL($orderWay).'
 		LIMIT '.(((int)($p) - 1) * (int)($n)).','.(int)($n);
-		
-		
+                
 		$result = Db::getInstance()->ExecuteS($sql);
 		
 		if ($orderBy == 'price')
@@ -301,6 +300,7 @@ class HomeCarousel extends Module
             $nb = (int)(Configuration::get('HOME_CAROUSEL_NBR'));
             $sort = (int)(Configuration::get('HOME_CAROUSEL_SORT'));
             $skipcategory = Configuration::get('HOME_CAROUSEL_SKIP_CAT');
+            
             
             switch ($sort) {
 		    case '0':

@@ -72,21 +72,15 @@
 			<!-- Header -->
 			{if $page_name =='index'}<div id="header" class="header1">{/if}
             {if $page_name !='index'}<div id="header" class="header2">{/if}
-				<a id="header_logo" href="{$link->getPageLink('index.php')}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
-					
-				</a>
-<!--				<div class="quick-access">
-                <div class="links">
-  	            <li class="top-links-1"><a href="{$base_dir}new-products.php" title="">{l s='Nowości' mod='blockvariouslinks'}</a></li>
-		        <li class="top-links-2"><a href="{$base_dir}prices-drop.php" title="">{l s='Promocje' mod='blockvariouslinks'}</a></li>
-		        <li class="top-links-3"><a href="{$link->getPageLink('contact-form.php', true)}">{l s='contact' mod='blockpermanentlinks'}</a></li>
+				
 
-	              </div>
-                </div>-->
 				<div id="header_right">
 					{$HOOK_TOP}
 				</div>
                                 <div id="bg">
+                                    <a id="header_logo" href="{$link->getPageLink('index.php')}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
+					
+                                    </a>
                                 </div>
 			</div>
 			<div id="columns">
