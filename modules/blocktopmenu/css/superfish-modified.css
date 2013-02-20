@@ -97,7 +97,7 @@ ul.sf-menu li li li.sfHover ul {
 }
 .sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
 	color:			#ffffff;
-	font-size:14px;
+	font-size:12px;
         font-weight: bold;
 }
 .sf-menu a:active  { /* visited pseudo selector so IE6 applies text colour*/
