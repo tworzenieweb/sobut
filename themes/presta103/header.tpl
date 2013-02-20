@@ -78,10 +78,11 @@
 					{$HOOK_TOP}
 				</div>
                                 <div id="bg">
-                                    <a id="header_logo" href="{$link->getPageLink('index.php')}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
+                                </div>
+                                
+                                <a id="header_logo" href="{$link->getPageLink('index.php')}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
 					
                                     </a>
-                                </div>
 			</div>
 			<div id="columns">
 				<!-- Left -->

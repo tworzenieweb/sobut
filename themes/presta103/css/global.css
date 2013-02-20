@@ -229,7 +229,10 @@ h4 { font-size: 1em }
 #header_logo {
     display: block;
     position:absolute;
-    width: 264px;
+    width: 300px;
+    height: 379px;
+    top: 10px;
+    left: -91px;
 }
 img.logo {
 	float: left;
@@ -593,19 +596,23 @@ img.icon { margin-right: 0.5em; vertical-align: middle }
 	font-weight: bold
 }
 
-/* breadcrumb.tpl */
 .breadcrumb {
-    color: #888888;
-    float: left;
-    font-size: 2em;
-    margin-left: -187px;
-    margin-top: -133px;
-    position: absolute;
+color: #000;
+font-size: 17px;
+clear: both;
+display: block;
+background: #fff;
+    -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding: 5px;
+margin-bottom: 12px;
 }
+
 .breadcrumb .navigation-pipe { padding: 0 0.6em }
 .breadcrumb a {
 	text-decoration: none;
-	color: #5d717e
+	color: #777255;
 }
 .breadcrumb a:hover { text-decoration: underline }
 
