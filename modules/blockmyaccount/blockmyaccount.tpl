@@ -31,7 +31,7 @@
 		<ul class="bullet">
 			<li><a href="{$link->getPageLink('history.php', true)}" title="">{l s='My orders' mod='blockmyaccount'}</a></li>
 			{if $returnAllowed}<li><a href="{$link->getPageLink('order-follow.php', true)}" title="">{l s='My merchandise returns' mod='blockmyaccount'}</a></li>{/if}
-			<li><a href="{$link->getPageLink('order-slip.php', true)}" title="">{l s='My credit slips' mod='blockmyaccount'}</a></li>
+<!--			<li><a href="{$link->getPageLink('order-slip.php', true)}" title="">{l s='My credit slips' mod='blockmyaccount'}</a></li>-->
 			<li><a href="{$link->getPageLink('addresses.php', true)}" title="">{l s='My addresses' mod='blockmyaccount'}</a></li>
 			<li><a href="{$link->getPageLink('identity.php', true)}" title="">{l s='My personal info' mod='blockmyaccount'}</a></li>
 			{if $voucherAllowed}<li><a href="{$link->getPageLink('discount.php', true)}" title="">{l s='My vouchers' mod='blockmyaccount'}</a></li>{/if}
