@@ -93,7 +93,7 @@
 <div class="block">
 <h1>{l s='My account'}</h1>
 <div class="block_content">
-
+<br />
 <p>{l s='Please configure the desired billing and delivery addresses to be preselected when placing an order. You may also add additional addresses, useful for sending gifts or receiving your order at the office.'}</p>
 
 {if isset($multipleAddresses) && $multipleAddresses}

@@ -30,7 +30,7 @@
 <div class="block">
 <h1>{l s='Your personal information'}</h1>
 <div class="block_content">
-
+<br />
 
 {include file="$tpl_dir./errors.tpl"}
 
