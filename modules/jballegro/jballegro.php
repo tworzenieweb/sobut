@@ -316,7 +316,7 @@ class Jballegro extends Module
         // sprawdzenie dostepnej ilosci
         $query = 'SELECT quantity FROM ' . _DB_PREFIX_ . 'product where id_product = ' . Tools::getValue('id_product') . ' LIMIT 1;';
         $result = Db::getInstance()->ExecuteS($query);
-
+        
         if (!$this->auctionValidation($result[0]['quantity']))
             return false;
 
@@ -355,7 +355,7 @@ class Jballegro extends Module
         $cat_id = Tools::getValue('fid_2');
         $f = $field;
         $f['fid'] = 2;
-        $f['fvalue-int'] = $cat_id;
+        $f['fvalue-int'] = $this->acountry == 228 ? 1811 : $cat_id; // for dev we set it to antics -> art
         $fields[2] = $f;
 
         // czas trwania
@@ -430,7 +430,7 @@ class Jballegro extends Module
             $content = preg_replace('/\{\{allegro\}\}/', Tools::getValue('fid_24'), $this->atemplate);
         }
         else
-            $content = '<div style="padding: 5px 10px;"' . Tools::getValue('fid_24') . '</div>';
+            $content = '<div style="padding: 5px 10px;">' . Tools::getValue('fid_24') . '</div>';
 
         $content = $this->parseAuctionContent($content);
 
@@ -1064,7 +1064,7 @@ class Jballegro extends Module
      */
     public function getAuctionForm($startProduct = null)
     {
-
+        
         // domyslnie uzywaj obrazka z bazy produktu
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && Tools::isSubmit('submitAllegro'))
         {
@@ -1079,13 +1079,19 @@ class Jballegro extends Module
         $price = Tools::getValue('fid_' . $this->aFields[8]['sell-form-id']) ? Tools::getValue('fid_' . $this->aFields[8]['sell-form-id']) : ($id_product ? $startProduct['price'] : '');
         $title = Tools::getValue('fid_' . $this->aFields[1]['sell-form-id']) ? Tools::getValue('fid_' . $this->aFields[1]['sell-form-id']) : ($id_product ? $startProduct['name'] : '');
         $desc = Tools::getValue('fid_' . $this->aFields[24]['sell-form-id']) ? Tools::getValue('fid_' . $this->aFields[24]['sell-form-id']) : ($id_product ? $startProduct['desc'] : '');
-        $form = '
-      <form action="' . $_SERVER['REQUEST_URI'] . '" method="post" enctype="multipart/form-data">
+        
+        $form = <<<FORM
+        <form action="{$_SERVER['REQUEST_URI']}" method="post" enctype="multipart/form-data">
+            <input id="id_product" type="hidden" name="id_product" value="{$id_product}"></input>
+FORM;
+        
+        if(!$id_product) {
+        $form .= <<<FORM
+         
         <table id="loadProduct">
         <tr>
           <th>Wybierz produkt: </th>
           <td>
-            <input id="id_product" type="hidden" name="id_product" value="' . $id_product . '"></input>
             <input class="inputForm" id="product_autocomplete_input" type="text" name="produkt" value=""></input></td>
           <script type="text/javascript">
           $(function() {
@@ -1105,12 +1111,17 @@ class Jballegro extends Module
           }).result( function(event, data, formatted){ 
             $("#id_product").val(data[1]);
             $("#atitle").val(data[0]);
-            loadProductData(data[1],"' . $this->_path . 'ajax.php");
+            loadProductData(data[1],"{$this->_path}ajax.php");
             $("#allegro-form").show("fast");
           });
           </script>
         </tr>
       </table>
+FORM;
+        }
+        
+        $form .= '
+
       
       <table id="allegro-form" style="' . ($this->error ? '' : ($id_product ? '' : 'display:none;')) . '">
         <tr>
@@ -1195,8 +1206,19 @@ class Jballegro extends Module
           <th>' . $this->aFields[10]['sell-form-title'] . '<!-- Województwo --></th>
           <td>
           <select name="fid_' . $this->aFields[10]['sell-form-id'] . '">';
-        $options = explode('|', $this->aFields[10]['sell-form-desc']);
-        $values = explode('|', $this->aFields[10]['sell-form-opts-values']);
+        
+        
+        // we are in dev mode so we need to replace.
+        if($this->acountry == 228) {
+            $options = explode('|', " -- Wybierz wojewodztwo -- |dolnopolskie|gornopolskie|lewopolskie|prawopolskie");
+            $values = explode('|', "0|213|214|215|216");
+        }
+        else {
+            $options = explode('|', $this->aFields[10]['sell-form-desc']);
+            $values = explode('|', $this->aFields[10]['sell-form-opts-values']);
+        }
+        
+
         $def = Tools::getValue('fid_' . $this->aFields[10]['sell-form-id']) ? Tools::getValue('fid_' . $this->aFields[10]['sell-form-id']) : $this->aFields[10]['sell-form-def-value'];
 
         foreach ($options as $k => $o)
