@@ -1025,7 +1025,9 @@ class Jballegro extends Module
         
         width: "550",
         height: "400",
-        relative_urls : "false"
+        relative_urls : "false",
+        remove_script_host : false,
+        convert_urls : false
         });
     </script>
     <!-- /TinyMCE -->
@@ -1449,6 +1451,9 @@ FORM;
           theme_advanced_toolbar_align : "left",
           theme_advanced_statusbar_location : "bottom",
           theme_advanced_resizing : true,
+          relative_urls : "false",
+          remove_script_host : false,
+          convert_urls : false
       });
     }
     </script>
