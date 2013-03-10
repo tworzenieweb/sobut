@@ -1024,7 +1024,8 @@ class Jballegro extends Module
         theme_advanced_resizing : true,
         
         width: "550",
-        height: "400"
+        height: "400",
+        relative_urls : "false"
         });
     </script>
     <!-- /TinyMCE -->
