@@ -732,13 +732,13 @@ class Jballegro extends Module
             if ($prod[0]['description'] == '')
                 $desc = $prod[0]['name'];
             else
-                $desc = $prod[0]['description'];
+                $desc = $this->processDescription('<h1>' . $prod[0]['name'] . '</h1><br />' . $prod[0]['description'], $id);
 
             $data = array(
                 'id_product' => $id,
                 'name' => $prod[0]['name'],
                 'price' => round($price, 2),
-                'desc' => '<h1>' . $prod[0]['name'] . '</h1><br />' . $desc
+                'desc' => $desc
             );
 
             return $data;
@@ -1775,6 +1775,26 @@ FORM;
         $str .= '</select>';
         
         return $str;
+    }
+    
+    
+    private function processDescription($string, $id_product) 
+    {
+      $cover = ProductCore::getCover($id_product);
+      
+      $image = new Image($cover['id_image']);
+      // get image full URL
+      $image_url = 'http://' . _PS_SHOP_DOMAIN_ . _THEME_PROD_DIR_.$image->getExistingImgPath().".jpg";
+      
+      return <<<HTML
+     
+      <img src="{$image_url}" style="float:right" />
+      
+      {$string}
+      
+HTML;
+      
+      
     }
 
 }

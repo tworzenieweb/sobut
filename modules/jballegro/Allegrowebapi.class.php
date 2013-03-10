@@ -12,6 +12,11 @@ class Allegrowebapi {
 
   const QUERY_ALLEGROWEBAPI = 1;
 
+  public function getClient()
+  {
+      return $this->client;
+  }
+  
   /**
    * Zapis ustawień oraz połączenie z WebAPI
    * 
@@ -30,7 +35,7 @@ class Allegrowebapi {
 
     $this->countryCode = $countryCode;
 
-    $this->client = new SoapClient('https://webapi.allegro.pl/uploader.php?wsdl');
+    $this->client = new SoapClient('https://webapi.allegro.pl/uploader.php?wsdl', array('trace' => 1));
   }
 
   /**
@@ -390,9 +395,11 @@ class Allegrowebapi {
    */
   public function newAuctionExt($fields, $private = null, $localId = null) {
     $this->checkConnection();
+    
     return $this->client->doNewAuctionExt(
                     $this->session['session-handle-part'], $fields, $private, $localId
     );
+    
   }
 
   /**
